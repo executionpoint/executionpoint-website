@@ -600,12 +600,20 @@
 
     @media (max-width: 768px) {
       .hero { min-height: 100vh; min-height: 100svh; }
+      .hero::before {
+        background: linear-gradient(
+          180deg,
+          rgba(3,14,27,0.92) 0%,
+          rgba(3,14,27,0.82) 60%,
+          rgba(3,14,27,0.75) 100%
+        );
+      }
       .hero-left { padding: 100px 24px 80px 24px; }
       .hero-eyebrow { font-size: 9px; letter-spacing: 0.14em; margin-bottom: 20px; }
       .hero-headline { font-size: clamp(28px, 7vw, 44px); margin-bottom: 16px; }
-      .hero-sub { font-size: clamp(14px, 3.5vw, 17px); margin-bottom: 16px; }
+      .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
       .hero-divider { display: none; }
-      .hero-body { font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
+      .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
       .hero-right-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
       .hero-card { padding: 16px 14px; }
       .hero-card-num { font-size: 22px; margin-bottom: 6px; }
