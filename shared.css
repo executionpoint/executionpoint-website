@@ -241,7 +241,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-cta:hover::before { transform: translateX(0); }
 
 /* Hamburger */
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; z-index: 101; }
 .nav-hamburger span {
   display: block;
   width: 24px; height: 1.5px;
@@ -293,7 +293,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* Mobile overlay */
 .nav-mobile-overlay {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: var(--navy-deep);
@@ -302,11 +302,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   justify-content: center;
   gap: 40px;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s var(--ease-out);
+  padding: 96px 24px 40px;
+  overflow-y: auto;
 }
-.nav-mobile-overlay.open { opacity: 1; pointer-events: all; }
+.nav-mobile-overlay.open { visibility: visible; opacity: 1; pointer-events: all; }
 .nav-mobile-overlay a {
   font-family: var(--serif);
   font-size: 42px;
@@ -1189,5 +1192,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .box-dark { padding: 24px 16px; }
   .audit-cta { padding: 52px 0; }
   .footer { padding: 52px 0 28px; }
-  .nav-logo-text { display: none; }
+  .nav-logo-name { font-size: 13px; }
+  .nav-logo-sub { font-size: 7.5px; }
 }
