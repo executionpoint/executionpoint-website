@@ -592,7 +592,15 @@
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-right { display: none; }
       /* Override formula-based padding — single column uses container padding */
-      .hero-left { padding: 120px 40px 80px 40px; max-width: 100%; }
+      .hero-left { padding: 120px 40px 40px 40px; max-width: 100%; }
+      .hero-right-cards {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        width: 100%;
+        background: rgba(7, 22, 40, 0.85);
+        border-top: 1px solid rgba(255,255,255,0.07);
+      }
       .services-grid-home { grid-template-columns: repeat(2, 1fr); }
       .industries-grid-home { grid-template-columns: repeat(2, 1fr); }
       .visual-break { height: 340px; }
@@ -614,7 +622,7 @@
       .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
       .hero-divider { display: none; }
       .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
-      .hero-right-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .hero-right-cards { grid-template-columns: repeat(2, 1fr); }
       .hero-card { padding: 16px 14px; }
       .hero-card-num { font-size: 22px; margin-bottom: 6px; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
@@ -820,23 +828,23 @@
 
       <div class="hero-right">
         <canvas id="neuralCanvas"></canvas>
-        <div class="hero-right-cards">
-          <div class="hero-card">
-            <div class="hero-card-num">30–40%</div>
-            <div class="hero-card-label">of SMB staff time lost to manual, automatable tasks</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">$47B</div>
-            <div class="hero-card-label">projected AI agents market by 2030</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">90%+</div>
-            <div class="hero-card-label">of AI solutions built for enterprise — not SMBs</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">48hrs</div>
-            <div class="hero-card-label">delivery time for your free AI audit report</div>
-          </div>
+      </div>
+      <div class="hero-right-cards">
+        <div class="hero-card">
+          <div class="hero-card-num">30–40%</div>
+          <div class="hero-card-label">of SMB staff time lost to manual, automatable tasks</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">$47B</div>
+          <div class="hero-card-label">projected AI agents market by 2030</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">90%+</div>
+          <div class="hero-card-label">of AI solutions built for enterprise — not SMBs</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">48hrs</div>
+          <div class="hero-card-label">delivery time for your free AI audit report</div>
         </div>
       </div>
     </section>
