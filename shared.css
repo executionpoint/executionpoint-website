@@ -305,14 +305,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s var(--ease-out);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   padding: 96px 24px 40px;
   overflow-y: auto;
 }
-.nav-mobile-overlay.open { visibility: visible; opacity: 1; pointer-events: all; }
+.nav-mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
 .nav-mobile-overlay a {
   font-family: var(--serif);
-  font-size: 42px;
+  font-size: clamp(22px, 6vw, 32px);
   font-weight: 300;
   color: white;
   letter-spacing: -0.02em;
