@@ -88,7 +88,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 60px 140px max(60px, calc((100vw - 1280px) / 2 + 60px));
+      padding: 80px 60px 80px max(60px, calc((100vw - 1280px) / 2 + 60px));
       max-width: none;
     }
 
@@ -241,36 +241,44 @@
     }
 
     /* Cards float at the bottom of the canvas */
-    /* Cards: relative by default (tablet/mobile); desktop overrides to absolute */
+    /* Cards: solid bg on mobile so text is always readable; desktop gets glass overlay */
     .hero-right-cards {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       width: 100%;
       max-width: 100%;
       gap: 0;
-      background: rgba(7,22,40,0.85);
-      border-top: 1px solid rgba(255,255,255,0.07);
+      background: #071628;
+      border-top: 1px solid rgba(255,255,255,0.12);
     }
     @media (min-width: 1101px) {
       .hero-right-cards {
-        grid-column: 1 / -1;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        grid-column: 2;
+        grid-row: 1;
+        position: relative;
         z-index: 3;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-self: center;
+        justify-self: center;
+        width: calc(100% - 96px);
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(3,12,24,0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
     }
 
     .hero-card {
-      background: rgba(3,12,24,0.72);
+      background: transparent;
       border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 24px 20px;
+      padding: 28px 20px;
       text-align: center;
       transition: background 0.2s;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border-right: 1px solid rgba(255,255,255,0.07);
+      border-right: 1px solid rgba(255,255,255,0.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 110px;
     }
     .hero-card:last-child {
       border-right: none;
@@ -281,7 +289,7 @@
     .hero-card-num {
       font-family: var(--serif);
       font-size: clamp(20px, 2vw, 28px);
-      font-weight: 300;
+      font-weight: 600;
       color: var(--gold);
       line-height: 1;
       margin-bottom: 6px;
@@ -290,8 +298,8 @@
     .hero-card-label {
       font-family: var(--sans);
       font-size: 10px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.42);
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
       line-height: 1.5;
     }
 
@@ -603,12 +611,23 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 0; }
+      /* Keep 2-column: text left, stat cards right (fills empty canvas space) */
+      .hero { grid-template-columns: 1fr 1fr; min-height: 100vh; min-height: 100svh; padding-bottom: 0; }
       .hero-right { display: none; }
-      /* Override formula-based padding — single column uses container padding */
-      .hero-left { padding: 120px 40px 100px 40px; max-width: 100%; }
+      .hero-left { padding: 120px 32px 80px 40px; max-width: 100%; grid-column: 1; grid-row: 1; }
       .hero-right-cards {
-        grid-template-columns: repeat(4, 1fr);
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: center;
+        position: relative;
+        z-index: 3;
+        background: rgba(3,12,24,0.52);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.10);
+        margin: 60px 24px 60px 0;
       }
       .services-grid-home { grid-template-columns: repeat(2, 1fr); }
       .industries-grid-home { grid-template-columns: repeat(2, 1fr); }
@@ -631,10 +650,11 @@
       .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
       .hero-divider { display: none; }
       .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
-      .hero-right-cards { grid-template-columns: repeat(4, 1fr); width: 100%; overflow: hidden; }
-      .hero-card { padding: 16px 10px; min-width: 0; }
+      .hero-right-cards { grid-template-columns: repeat(2, 1fr); overflow: hidden; margin: 40px 16px 40px 0; }
+      .hero-card { padding: 18px 12px; min-width: 0; }
       .hero-card:nth-child(2n) { border-right: none; }
-      .hero-card-label { font-size: 9px; line-height: 1.4; word-break: break-word; }
+      .hero-card:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.10); }
+      .hero-card-label { font-size: 10px; line-height: 1.5; }
       .hero-card-num { font-size: 22px; margin-bottom: 6px; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
       .btn-hero-primary { text-align: center; justify-content: center; padding: 16px 24px; font-size: 11px; }
@@ -652,10 +672,21 @@
     }
 
     @media (max-width: 480px) {
-      .hero-left { padding: 100px 16px 80px 16px; }
+      /* Stack to single column on very small phones */
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 100px 20px 48px 20px; grid-column: 1; grid-row: 1; }
       .hero-headline { font-size: clamp(24px, 6.5vw, 36px); }
-      .hero-right-cards { grid-template-columns: repeat(2, 1fr); }
-      .hero-card { padding: 16px 14px; }
+      .hero-right-cards {
+        grid-column: 1; grid-row: 2;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: unset;
+        margin: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        background: #071628;
+      }
+      .hero-card { padding: 18px 14px; }
+      .hero-card-num { font-size: 24px; }
       .hero-card-label { font-size: 10px; }
       .visual-break { height: 260px; }
       .services-preview { padding: 52px 0 60px; }
