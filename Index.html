@@ -596,10 +596,10 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-bottom: 0; }
       .hero-right { display: none; }
       /* Override formula-based padding — single column uses container padding */
-      .hero-left { padding: 120px 40px 40px 40px; max-width: 100%; }
+      .hero-left { padding: 120px 40px 60px 40px; max-width: 100%; }
       .hero-right-cards {
         position: relative;
         display: grid;
@@ -629,8 +629,9 @@
       .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
       .hero-divider { display: none; }
       .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
-      .hero-right-cards { grid-template-columns: repeat(2, 1fr); }
-      .hero-card { padding: 16px 14px; }
+      .hero-right-cards { grid-template-columns: repeat(2, 1fr); width: 100%; overflow: hidden; }
+      .hero-card { padding: 16px 14px; min-width: 0; overflow: hidden; }
+      .hero-card-label { font-size: 10px; line-height: 1.4; }
       .hero-card-num { font-size: 22px; margin-bottom: 6px; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
       .btn-hero-primary { text-align: center; justify-content: center; padding: 16px 24px; font-size: 11px; }
