@@ -250,6 +250,57 @@
     }
 
     /* ── URGENCY ── */
+    /* ── GDPR CONSENT ── */
+    .form-consent-block {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--warm-gray);
+    }
+    .form-consent-text {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin-bottom: 14px;
+    }
+    .form-consent-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      margin-bottom: 14px;
+    }
+    .form-consent-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+    .form-consent-check span {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-dark);
+    }
+    .form-consent-check span em {
+      color: var(--teal);
+      font-style: normal;
+    }
+    .form-consent-fine {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(61,59,56,0.6);
+      margin-bottom: 10px;
+    }
+    .form-consent-fine a { color: var(--teal); text-decoration: none; }
+    .form-consent-fine a:hover { text-decoration: underline; }
+
     .form-urgency {
       font-family: var(--mono);
       font-size: 10px;
@@ -679,6 +730,17 @@
                 <textarea class="form-textarea" id="challenge" name="challenge" placeholder="Describe your biggest operational challenge..." required></textarea>
               </div>
 
+              <!-- GDPR Consent -->
+              <div class="form-consent-block">
+                <p class="form-consent-text">Execution Point Consulting is committed to protecting and respecting your privacy, and we'll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below:</p>
+                <label class="form-consent-check">
+                  <input type="checkbox" id="communications" name="communications" required />
+                  <span>I agree to receive other communications from Execution Point Consulting. <em>*</em></span>
+                </label>
+                <p class="form-consent-fine">You can unsubscribe at any time. For more information on how to unsubscribe and our privacy practices, please review our <a href="privacy.html">Privacy Policy</a>.</p>
+                <p class="form-consent-fine">By clicking submit below, you consent to allow Execution Point Consulting to store and process the personal information submitted above to provide you the content requested.</p>
+              </div>
+
               <p class="form-urgency">Limited audit slots available each month.</p>
               <button type="submit" class="form-submit">Request My Free Audit →</button>
               <p class="form-note">No spam. No sales pressure. Just a useful conversation.</p>
@@ -876,11 +938,12 @@
       btn.disabled = true;
 
       const data = new FormData(auditForm);
+      const communicationsChecked = !!data.get('communications');
       const payload = {
         fields: [
           { objectTypeId: '0-1', name: 'firstname',    value: data.get('firstName')   || '' },
           { objectTypeId: '0-1', name: 'lastname',     value: data.get('lastName')    || '' },
-          { objectTypeId: '0-1', name: 'company',     value: data.get('company')     || '' },
+          { objectTypeId: '0-1', name: 'company',      value: data.get('company')     || '' },
           { objectTypeId: '0-1', name: 'email',        value: data.get('email')       || '' },
           { objectTypeId: '0-1', name: 'phone',        value: data.get('phone')       || '' },
           { objectTypeId: '0-1', name: 'industry',     value: data.get('industry')    || '' },
@@ -890,6 +953,19 @@
         context: {
           pageUri:  window.location.href,
           pageName: 'Free AI Audit — Execution Point Consulting'
+        },
+        legalConsentOptions: {
+          consent: {
+            consentToProcess: true,
+            text: 'By clicking submit, you consent to allow Execution Point Consulting to store and process the personal information submitted above to provide you the content requested.',
+            communications: [
+              {
+                value: communicationsChecked,
+                subscriptionTypeId: 999,
+                text: 'I agree to receive other communications from Execution Point Consulting.'
+              }
+            ]
+          }
         }
       };
 
