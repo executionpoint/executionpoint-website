@@ -729,8 +729,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   gap: 10px;
   font-family: var(--mono);
   font-size: 10px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 0 15px;
