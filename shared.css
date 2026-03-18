@@ -1050,13 +1050,13 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   max-width: 300px;
 }
 .footer-col-title {
-  font-family: var(--mono);
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.18em;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.8);
-  margin-bottom: 24px;
+  color: #ffffff;
+  margin-bottom: 16px;
 }
 .footer-links { display: flex; flex-direction: column; gap: 12px; }
 .footer-links a {
@@ -1071,17 +1071,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-top: 12px;
+  gap: 10px;
 }
-.footer-contact a {
-  font-family: var(--sans);
+.footer-contact-item {
+  font-family: 'DM Sans', sans-serif;
   font-size: 14px;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
   text-decoration: none;
   transition: color 0.2s ease;
+  line-height: 1.4;
 }
-.footer-contact a:hover { color: var(--teal-lt); }
+.footer-contact-item:hover { color: var(--teal-lt); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
 .footer-copy {
   font-family: var(--mono);
