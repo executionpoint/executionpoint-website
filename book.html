@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Your Free AI Audit | Execution Point Consulting</title>
+  <meta name="description" content="Pick a time for your free AI audit. A 30-minute call where we map your operations and identify every automation opportunity." />
+  <meta name="robots" content="noindex, nofollow" />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://executionpointconsulting.com/book.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Execution Point Consulting" />
+  <meta property="og:title" content="Book Your Free AI Audit | Execution Point Consulting" />
+  <meta property="og:description" content="Pick a time for your free AI audit. A 30-minute call where we map your operations and identify every automation opportunity." />
+  <meta property="og:url" content="https://executionpointconsulting.com/book.html" />
+  <meta property="og:image" content="https://executionpointconsulting.com/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Book Your Free AI Audit | Execution Point Consulting" />
+  <meta name="twitter:description" content="Pick a time for your free AI audit. A 30-minute call where we map your operations and identify every automation opportunity." />
+  <meta name="twitter:image" content="https://executionpointconsulting.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+
+  <style>
+    /* ── CONFIRMATION BANNER ── */
+    .confirm-banner {
+      background: var(--navy-deep);
+      padding: 140px 0 72px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .confirm-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 70% at 10% 50%, rgba(14,165,160,0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 90% 30%, rgba(201,168,76,0.06) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .confirm-banner::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(42,173,162,0.3), transparent);
+    }
+    .confirm-banner .container { position: relative; z-index: 1; }
+    .confirm-check {
+      width: 64px;
+      height: 64px;
+      background: rgba(42,173,162,0.12);
+      border: 1px solid rgba(42,173,162,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .confirm-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 20px;
+    }
+    .confirm-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.022em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .confirm-title em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 300;
+    }
+    .confirm-body {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.4vw, 17px);
+      font-weight: 300;
+      line-height: 1.78;
+      color: rgba(255, 255, 255, 0.85);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── BOOKING SECTION ── */
+    .booking-section {
+      background: var(--white);
+      padding: 88px 0 96px;
+    }
+    .booking-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .booking-text h2 {
+      font-family: var(--serif);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--text-dark);
+      margin-bottom: 18px;
+    }
+    .booking-text h2 em {
+      font-style: italic;
+      color: var(--teal);
+      font-weight: 300;
+    }
+    .booking-text p {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+    .booking-details {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .booking-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-body);
+    }
+    .booking-detail-icon {
+      width: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .booking-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 520px;
+      background: var(--off-white);
+      border: 2px dashed var(--warm-gray);
+      text-align: center;
+      padding: 56px 48px;
+    }
+    .booking-card-icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .booking-card h3 {
+      font-family: var(--serif);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+    .booking-card p {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-body);
+      max-width: 320px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+    .btn-book {
+      display: inline-block;
+      margin-top: 32px;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      text-decoration: none;
+      transition: all 0.2s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-book::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.2);
+      transform: translateX(-100%);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .btn-book:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
+    .btn-book:hover::before { transform: translateX(0); }
+    .btn-book-note {
+      margin-top: 14px;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: rgba(0,0,0,0.38);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .booking-inner { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 768px) {
+      .confirm-banner { padding: 110px 0 52px; }
+      .booking-section { padding: 64px 0 72px; }
+      .booking-card { padding: 36px 24px; min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="Index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="what-we-do.html">What We Do</a>
+          <div class="mega-menu three-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a class="mega-link" href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+              <a class="mega-link" href="services/ai-strategy.html">AI Strategy</a>
+              <a class="mega-link" href="services/ai-implementation.html">AI Implementation</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a class="mega-link" href="services/process-documentation.html">Process Documentation</a>
+              <a class="mega-link" href="services/training-enablement.html">Training &amp; Enablement</a>
+              <a class="mega-link" href="services/staff-augmentation.html">Staff Augmentation</a>
+              <a class="mega-link" href="services/operations-retainer.html">Operations Retainer</a>
+            </div>
+            <div>
+              <div class="mega-col-title">Industries</div>
+              <a class="mega-link" href="industries/real-estate.html">Real Estate</a>
+              <a class="mega-link" href="industries/insurance.html">Insurance</a>
+              <a class="mega-link" href="industries/professional-services.html">Professional Services</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="industries.html">Industries</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">By Sector</div>
+              <a class="mega-link" href="industries/real-estate.html">Real Estate Brokerages</a>
+              <a class="mega-link" href="industries/insurance.html">Insurance Agencies</a>
+              <a class="mega-link" href="industries/professional-services.html">Professional Services</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <a href="free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-mobile-overlay" id="mobileOverlay">
+    <a href="what-we-do.html">What We Do</a>
+    <a href="industries.html">Industries</a>
+    <a href="about.html">About Us</a>
+    <a href="free-ai-audit.html" style="color:var(--gold);">Free AI Audit</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a class="mobile-mega-link" href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+      <a class="mobile-mega-link" href="services/ai-strategy.html">AI Strategy</a>
+      <a class="mobile-mega-link" href="services/ai-implementation.html">AI Implementation</a>
+      <a class="mobile-mega-link" href="services/process-documentation.html">Process Documentation</a>
+      <a class="mobile-mega-link" href="services/training-enablement.html">Training &amp; Enablement</a>
+      <a class="mobile-mega-link" href="services/staff-augmentation.html">Staff Augmentation</a>
+      <a class="mobile-mega-link" href="services/operations-retainer.html">Operations Retainer</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- ═══ CONFIRMATION BANNER ═══ -->
+    <section class="confirm-banner">
+      <div class="container">
+        <div class="confirm-check">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--teal-lt)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div class="confirm-eyebrow">Form received</div>
+        <h1 class="confirm-title">You're on the list.<br><em>Now pick a time.</em></h1>
+        <p class="confirm-body">We've received your details and will come prepared. Lock in a 30-minute slot below and we'll take care of the rest.</p>
+      </div>
+    </section>
+
+    <!-- ═══ BOOKING CALENDAR ═══ -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-inner">
+
+          <div class="booking-text reveal">
+            <div class="section-label" style="margin-bottom: 20px;">Skip the back-and-forth</div>
+            <h2>Pick a time<br><em>that works for you.</em></h2>
+            <p>Use the calendar to schedule your 30-minute audit call directly. We'll still review your form answers before the call so we come prepared.</p>
+
+            <div class="booking-details">
+              <div class="booking-detail">
+                <span class="booking-detail-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </span>
+                30-minute call
+              </div>
+              <div class="booking-detail">
+                <span class="booking-detail-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                </span>
+                Video or phone — your choice
+              </div>
+              <div class="booking-detail">
+                <span class="booking-detail-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </span>
+                Available in English &amp; Spanish
+              </div>
+              <div class="booking-detail">
+                <span class="booking-detail-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                </span>
+                No sales pitch — just a useful audit
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-1">
+            <div class="booking-card">
+              <div class="booking-card-icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <h3>Pick a time that works for you</h3>
+              <p>Click below to open our scheduling calendar and lock in a 30-minute slot directly.</p>
+              <a href="https://calendar.app.google/Ez3qN9semPvhQRRH6" target="_blank" rel="noopener" class="btn-book">Book Your Free Audit &rarr;</a>
+              <p class="btn-book-note">Opens in a new tab. No account required.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="services/process-documentation.html">Process Documentation</a>
+            <a href="services/ai-implementation.html">AI Implementation</a>
+            <a href="services/training-enablement.html">Training &amp; Enablement</a>
+            <a href="services/staff-augmentation.html">Staff Augmentation</a>
+            <a href="services/ai-strategy.html">AI Strategy</a>
+            <a href="services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="industries/insurance.html">Insurance Agencies</a>
+            <a href="industries/professional-services.html">Professional Services</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="free-ai-audit.html">Free AI Audit</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-contact">
+            <a href="tel:+17866183396" class="footer-contact-item">(786) 618-3396</a>
+            <a href="mailto:info@executionpointconsulting.com" class="footer-contact-item">info@executionpointconsulting.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2025 Execution Point Consulting. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const overlay   = document.getElementById('mobileOverlay');
+    hamburger.addEventListener('click', () => {
+      const open = overlay.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    // Reveal animations
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
