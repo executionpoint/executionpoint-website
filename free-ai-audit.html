@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free AI Audit — Execution Point Consulting</title>
-  <meta name="description" content="Book your free AI audit with Execution Point Consulting. We'll identify exactly where automation can save you time, reduce risk, and unlock growth — delivered in 48 hours." />
+  <title>Free AI Audit | Execution Point Consulting</title>
+  <meta name="description" content="Book a free 60-minute AI audit. We map your operations, identify every automation opportunity, and deliver a written report within 48 hours. No cost, no obligation." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.executionpointconsulting.com/free-ai-audit.html" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Execution Point Consulting" />
+  <meta property="og:title" content="Free AI Audit" />
+  <meta property="og:description" content="Book a free 60-minute AI audit. We map your operations, identify every automation opportunity, and deliver a written report within 48 hours. No cost, no obligation." />
+  <meta property="og:url" content="https://www.executionpointconsulting.com/free-ai-audit.html" />
+  <meta property="og:image" content="https://www.executionpointconsulting.com/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Free AI Audit" />
+  <meta name="twitter:description" content="Book a free 60-minute AI audit. We map your operations, identify every automation opportunity, and deliver a written report within 48 hours. No cost, no obligation." />
+  <meta name="twitter:image" content="https://www.executionpointconsulting.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -250,6 +264,57 @@
     }
 
     /* ── URGENCY ── */
+    /* ── GDPR CONSENT ── */
+    .form-consent-block {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--warm-gray);
+    }
+    .form-consent-text {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--text-body);
+      margin-bottom: 14px;
+    }
+    .form-consent-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+      margin-bottom: 14px;
+    }
+    .form-consent-check input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+    .form-consent-check span {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--text-dark);
+    }
+    .form-consent-check span em {
+      color: var(--teal);
+      font-style: normal;
+    }
+    .form-consent-fine {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(61,59,56,0.6);
+      margin-bottom: 10px;
+    }
+    .form-consent-fine a { color: var(--teal); text-decoration: none; }
+    .form-consent-fine a:hover { text-decoration: underline; }
+
     .form-urgency {
       font-family: var(--mono);
       font-size: 10px;
@@ -485,6 +550,20 @@
       .container { padding: 0 20px; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free AI Audit",
+    "description": "Book a free 60-minute AI audit. We map your operations, identify every automation opportunity, and deliver a written report within 48 hours. No cost, no obligation.",
+    "url": "https://www.executionpointconsulting.com/free-ai-audit.html",
+    "provider": {
+      "@type": "Organization",
+      "name": "Execution Point Consulting",
+      "@id": "https://www.executionpointconsulting.com/#organization"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -637,6 +716,11 @@
               </div>
 
               <div class="form-group">
+                <label class="form-label" for="company">Company name <span>*</span></label>
+                <input class="form-input" type="text" id="company" name="company" placeholder="Your company name" required />
+              </div>
+
+              <div class="form-group">
                 <label class="form-label" for="email">Email address <span>*</span></label>
                 <input class="form-input" type="email" id="email" name="email" placeholder="Your email address" required />
               </div>
@@ -672,6 +756,17 @@
               <div class="form-group">
                 <label class="form-label" for="challenge">What's your biggest operational challenge? <span>*</span></label>
                 <textarea class="form-textarea" id="challenge" name="challenge" placeholder="Describe your biggest operational challenge..." required></textarea>
+              </div>
+
+              <!-- GDPR Consent -->
+              <div class="form-consent-block">
+                <p class="form-consent-text">Execution Point Consulting is committed to protecting and respecting your privacy, and we'll only use your personal information to administer your account and to provide the products and services you requested from us. From time to time, we would like to contact you about our products and services, as well as other content that may be of interest to you. If you consent to us contacting you for this purpose, please tick below:</p>
+                <label class="form-consent-check">
+                  <input type="checkbox" id="communications" name="communications" required />
+                  <span>I agree to receive other communications from Execution Point Consulting. <em>*</em></span>
+                </label>
+                <p class="form-consent-fine">You can unsubscribe at any time. For more information on how to unsubscribe and our privacy practices, please review our <a href="privacy.html">Privacy Policy</a>.</p>
+                <p class="form-consent-fine">By clicking submit below, you consent to allow Execution Point Consulting to store and process the personal information submitted above to provide you the content requested.</p>
               </div>
 
               <p class="form-urgency">Limited audit slots available each month.</p>
@@ -761,17 +856,13 @@
           </div>
 
           <div class="reveal reveal-delay-1">
-            <div class="calendly-embed-wrapper">
-              <iframe
-                src="https://calendly.com/executionpointconsulting-info/30min?hide_gdpr_banner=1&primary_color=2AADA2&text_color=030e1b&background_color=ffffff"
-                frameborder="0"
-                scrolling="no"
-                title="Schedule your free AI audit"
-              ></iframe>
-              <div class="calendly-fallback">
-                <p>Can't see the calendar?</p>
-                <a href="https://calendly.com/executionpointconsulting-info/30min" target="_blank" rel="noopener">Open scheduling calendar →</a>
+            <div class="calendly-placeholder">
+              <div class="calendly-placeholder-icon">
+                <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
               </div>
+              <h3>Pick a time that works for you</h3>
+              <p>Click below to open our scheduling calendar and lock in a 30-minute slot directly.</p>
+              <a href="https://calendar.app.google/Ez3qN9semPvhQRRH6" target="_blank" rel="noopener" class="form-submit" style="display:inline-block; margin-top:28px; text-decoration:none; padding:15px 32px; width:auto;">Book Your Free Audit →</a>
             </div>
           </div>
 
@@ -871,10 +962,12 @@
       btn.disabled = true;
 
       const data = new FormData(auditForm);
+      const communicationsChecked = !!data.get('communications');
       const payload = {
         fields: [
           { objectTypeId: '0-1', name: 'firstname',    value: data.get('firstName')   || '' },
           { objectTypeId: '0-1', name: 'lastname',     value: data.get('lastName')    || '' },
+          { objectTypeId: '0-1', name: 'company',      value: data.get('company')     || '' },
           { objectTypeId: '0-1', name: 'email',        value: data.get('email')       || '' },
           { objectTypeId: '0-1', name: 'phone',        value: data.get('phone')       || '' },
           { objectTypeId: '0-1', name: 'industry',     value: data.get('industry')    || '' },
@@ -884,6 +977,19 @@
         context: {
           pageUri:  window.location.href,
           pageName: 'Free AI Audit — Execution Point Consulting'
+        },
+        legalConsentOptions: {
+          consent: {
+            consentToProcess: true,
+            text: 'By clicking submit, you consent to allow Execution Point Consulting to store and process the personal information submitted above to provide you the content requested.',
+            communications: [
+              {
+                value: communicationsChecked,
+                subscriptionTypeId: 999,
+                text: 'I agree to receive other communications from Execution Point Consulting.'
+              }
+            ]
+          }
         }
       };
 

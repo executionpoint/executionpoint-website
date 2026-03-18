@@ -241,7 +241,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .nav-cta:hover::before { transform: translateX(0); }
 
 /* Hamburger */
-.nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; cursor: pointer; z-index: 101; }
 .nav-hamburger span {
   display: block;
   width: 24px; height: 1.5px;
@@ -293,7 +293,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 
 /* Mobile overlay */
 .nav-mobile-overlay {
-  display: none;
+  display: flex;
   position: fixed;
   inset: 0;
   background: var(--navy-deep);
@@ -302,14 +302,21 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   align-items: center;
   justify-content: center;
   gap: 40px;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s var(--ease-out);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 96px 24px 40px;
+  overflow-y: auto;
 }
-.nav-mobile-overlay.open { opacity: 1; pointer-events: all; }
+.nav-mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
 .nav-mobile-overlay a {
   font-family: var(--serif);
-  font-size: 42px;
+  font-size: clamp(22px, 6vw, 32px);
   font-weight: 300;
   color: white;
   letter-spacing: -0.02em;
@@ -706,13 +713,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .trust-bar {
   background: var(--navy-mid);
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  padding: 0 60px;
+  padding: 0;
   height: 62px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 0;
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 .trust-item {
   display: flex;
@@ -720,11 +729,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   gap: 10px;
   font-family: var(--mono);
   font-size: 10px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.5);
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0 28px;
+  padding: 0 15px;
   white-space: nowrap;
 }
 .trust-item + .trust-item { border-left: 1px solid rgba(255,255,255,0.07); }
@@ -1096,8 +1105,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 ═══════════════════════════════════════ */
 @media (max-width: 1100px) {
   .container { padding: 0 40px; }
-  .trust-bar { gap: 0; }
-  .trust-item { padding: 0 18px; }
+  .trust-bar { display: none; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
   .hero-layout { grid-template-columns: 1fr; }
   .hero-checklist { display: none; }
@@ -1119,8 +1127,28 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .nav-hamburger { display: flex; }
   .nav-mobile-overlay { display: flex; }
 
-  /* Trust bar */
-  .trust-bar { display: none; }
+  /* Trust bar — re-enable on mobile as 2-column grid */
+  .trust-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    justify-content: unset;
+    gap: 0;
+  }
+  .trust-item {
+    padding: 12px 16px;
+    white-space: normal;
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    justify-content: flex-start;
+    border-left: none;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .trust-item + .trust-item { border-left: none; }
+  .trust-item:nth-child(even) { border-left: 1px solid rgba(255,255,255,0.07); }
+  .trust-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
   /* Page hero */
   .page-hero { padding: 110px 0 52px; }
@@ -1189,5 +1217,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   .box-dark { padding: 24px 16px; }
   .audit-cta { padding: 52px 0; }
   .footer { padding: 52px 0 28px; }
-  .nav-logo-text { display: none; }
+  .nav-logo-name { font-size: 13px; }
+  .nav-logo-sub { font-size: 7.5px; }
 }

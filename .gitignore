@@ -1,0 +1,13 @@
+# Node
+node_modules/
+package-lock.json
+
+# OG image generation scripts (temporary files)
+og-image.html
+generate-og.js
+
+# Mac system files
+.DS_Store
+
+# Environment files
+.env

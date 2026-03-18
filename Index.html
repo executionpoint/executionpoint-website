@@ -3,8 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Execution Point Consulting — Your AI Partner for Regulated Industries</title>
-  <meta name="description" content="AI and automation consulting for regulated industries. Compliance-first implementation for real estate brokerages, insurance agencies, and professional services firms across the US." />
+  <title>AI &amp; Automation Consulting for Regulated Industries | Execution Point Consulting</title>
+  <meta name="description" content="Execution Point Consulting builds compliance-first AI and automation systems for real estate brokerages, insurance agencies, and law firms in Florida, New York, and across the US." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.executionpointconsulting.com/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Execution Point Consulting" />
+  <meta property="og:title" content="AI &amp; Automation Consulting for Regulated Industries" />
+  <meta property="og:description" content="Execution Point Consulting builds compliance-first AI and automation systems for real estate brokerages, insurance agencies, and law firms in Florida, New York, and across the US." />
+  <meta property="og:url" content="https://www.executionpointconsulting.com/" />
+  <meta property="og:image" content="https://www.executionpointconsulting.com/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI &amp; Automation Consulting for Regulated Industries" />
+  <meta name="twitter:description" content="Execution Point Consulting builds compliance-first AI and automation systems for real estate brokerages, insurance agencies, and law firms in Florida, New York, and across the US." />
+  <meta name="twitter:image" content="https://www.executionpointconsulting.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -241,25 +255,47 @@
     }
 
     /* Cards float at the bottom of the canvas */
+    /* Cards: solid bg on mobile so text is always readable; desktop gets glass overlay */
     .hero-right-cards {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: rgba(255,255,255,0.05);
-      z-index: 3;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      max-width: 100%;
+      gap: 0;
+      background: #071628;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    @media (min-width: 1101px) {
+      .hero-right-cards {
+        grid-column: 2;
+        grid-row: 1;
+        position: relative;
+        z-index: 3;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-self: center;
+        justify-self: center;
+        width: calc(100% - 96px);
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(3,12,24,0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
     }
 
     .hero-card {
-      background: rgba(3,12,24,0.72);
+      background: transparent;
       border-top: 1px solid rgba(255,255,255,0.07);
-      padding: 18px 20px;
+      padding: 28px 20px;
+      text-align: center;
       transition: background 0.2s;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      border-right: 1px solid rgba(255,255,255,0.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 110px;
+    }
+    .hero-card:last-child {
+      border-right: none;
     }
     .hero-card:hover {
       background: rgba(29,122,114,0.18);
@@ -267,7 +303,7 @@
     .hero-card-num {
       font-family: var(--serif);
       font-size: clamp(20px, 2vw, 28px);
-      font-weight: 300;
+      font-weight: 600;
       color: var(--gold);
       line-height: 1;
       margin-bottom: 6px;
@@ -276,8 +312,8 @@
     .hero-card-label {
       font-family: var(--sans);
       font-size: 10px;
-      font-weight: 400;
-      color: rgba(255,255,255,0.42);
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
       line-height: 1.5;
     }
 
@@ -589,24 +625,50 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1100px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; }
+      /* Keep 2-column: text left, stat cards right (fills empty canvas space) */
+      .hero { grid-template-columns: 1fr 1fr; min-height: 100vh; min-height: 100svh; padding-bottom: 0; }
       .hero-right { display: none; }
-      /* Override formula-based padding — single column uses container padding */
-      .hero-left { padding: 120px 40px 80px 40px; max-width: 100%; }
+      .hero-left { padding: 120px 32px 80px 40px; max-width: 100%; grid-column: 1; grid-row: 1; }
+      .hero-right-cards {
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: center;
+        position: relative;
+        z-index: 3;
+        background: rgba(3,12,24,0.52);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.10);
+        margin: 60px 24px 60px 0;
+      }
       .services-grid-home { grid-template-columns: repeat(2, 1fr); }
       .industries-grid-home { grid-template-columns: repeat(2, 1fr); }
       .visual-break { height: 340px; }
     }
 
     @media (max-width: 768px) {
-      .hero-left { padding: 48px 24px 60px 24px; }
+      .hero { min-height: 100vh; min-height: 100svh; }
+      .hero::before {
+        background: linear-gradient(
+          180deg,
+          rgba(3,14,27,0.92) 0%,
+          rgba(3,14,27,0.82) 60%,
+          rgba(3,14,27,0.75) 100%
+        );
+      }
+      .hero-left { padding: 100px 24px 100px 24px; }
       .hero-eyebrow { font-size: 9px; letter-spacing: 0.14em; margin-bottom: 20px; }
       .hero-headline { font-size: clamp(28px, 7vw, 44px); margin-bottom: 16px; }
-      .hero-sub { font-size: clamp(14px, 3.5vw, 17px); margin-bottom: 16px; }
+      .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
       .hero-divider { display: none; }
-      .hero-body { font-size: 14px; margin-bottom: 0; max-width: 100%; }
-      .hero-right-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
-      .hero-card { padding: 16px 14px; }
+      .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
+      .hero-right-cards { grid-template-columns: repeat(2, 1fr); overflow: hidden; margin: 40px 16px 40px 0; }
+      .hero-card { padding: 18px 12px; min-width: 0; }
+      .hero-card:nth-child(2n) { border-right: none; }
+      .hero-card:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.10); }
+      .hero-card-label { font-size: 10px; line-height: 1.5; }
       .hero-card-num { font-size: 22px; margin-bottom: 6px; }
       .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
       .btn-hero-primary { text-align: center; justify-content: center; padding: 16px 24px; font-size: 11px; }
@@ -624,8 +686,22 @@
     }
 
     @media (max-width: 480px) {
-      .hero-left { padding: 40px 16px 52px 16px; }
+      /* Stack to single column on very small phones */
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 100px 20px 48px 20px; grid-column: 1; grid-row: 1; }
       .hero-headline { font-size: clamp(24px, 6.5vw, 36px); }
+      .hero-right-cards {
+        grid-column: 1; grid-row: 2;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: unset;
+        margin: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        background: #071628;
+      }
+      .hero-card { padding: 18px 14px; }
+      .hero-card-num { font-size: 24px; }
+      .hero-card-label { font-size: 10px; }
       .visual-break { height: 260px; }
       .services-preview { padding: 52px 0 60px; }
       .industries-preview { padding: 52px 0 60px; }
@@ -707,6 +783,47 @@
       padding: 8px 0 8px 12px;
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.executionpointconsulting.com/#organization",
+        "name": "Execution Point Consulting",
+        "url": "https://www.executionpointconsulting.com",
+        "logo": "https://www.executionpointconsulting.com/og-image.png",
+        "description": "AI and automation consulting for regulated industries. Compliance-first implementation for real estate brokerages, insurance agencies, and professional services firms.",
+        "areaServed": ["Florida", "New York", "United States"],
+        "knowsAbout": ["Artificial Intelligence", "Business Automation", "Compliance", "Real Estate Technology", "Insurance Technology", "Legal Technology"],
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Veronica Marzol",
+            "jobTitle": "CEO & Co-Founder"
+          },
+          {
+            "@type": "Person",
+            "name": "Mauricio Marzol",
+            "jobTitle": "CTO & Co-Founder"
+          }
+        ],
+        "sameAs": [
+          "https://www.linkedin.com/company/execution-point-consulting"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.executionpointconsulting.com/#website",
+        "url": "https://www.executionpointconsulting.com",
+        "name": "Execution Point Consulting",
+        "publisher": {
+          "@id": "https://www.executionpointconsulting.com/#organization"
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -811,23 +928,23 @@
 
       <div class="hero-right">
         <canvas id="neuralCanvas"></canvas>
-        <div class="hero-right-cards">
-          <div class="hero-card">
-            <div class="hero-card-num">30–40%</div>
-            <div class="hero-card-label">of SMB staff time lost to manual, automatable tasks</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">$47B</div>
-            <div class="hero-card-label">projected AI agents market by 2030</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">90%+</div>
-            <div class="hero-card-label">of AI solutions built for enterprise — not SMBs</div>
-          </div>
-          <div class="hero-card">
-            <div class="hero-card-num">48hrs</div>
-            <div class="hero-card-label">delivery time for your free AI audit report</div>
-          </div>
+      </div>
+      <div class="hero-right-cards">
+        <div class="hero-card">
+          <div class="hero-card-num">30–40%</div>
+          <div class="hero-card-label">of SMB staff time lost to manual, automatable tasks</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">$47B</div>
+          <div class="hero-card-label">projected AI agents market by 2030</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">90%+</div>
+          <div class="hero-card-label">of AI solutions built for enterprise — not SMBs</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">48hrs</div>
+          <div class="hero-card-label">delivery time for your free AI audit report</div>
         </div>
       </div>
     </section>
@@ -894,7 +1011,7 @@
 
           <div class="card reveal reveal-delay-2">
             <div class="card-header">
-              <div class="card-icon gold-icon">
+              <div class="card-icon">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
               </div>
               <span class="card-tag">Strategy</span>
@@ -930,7 +1047,7 @@
 
           <div class="card reveal reveal-delay-3">
             <div class="card-header">
-              <div class="card-icon gold-icon">
+              <div class="card-icon">
                 <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
               </div>
               <span class="card-tag">Talent</span>
