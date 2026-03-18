@@ -7,6 +7,9 @@ package.json
 og-image.html
 generate-og.js
 
+# Social images
+social/
+
 # Mac system files
 .DS_Store
 
