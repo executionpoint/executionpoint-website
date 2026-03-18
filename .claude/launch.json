@@ -2,10 +2,10 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "static-site",
+      "name": "Execution Point Website",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/veronicagrunbergkogan/Downloads/outputs"],
-      "port": 3000
+      "runtimeArgs": ["-m", "http.server", "3002"],
+      "port": 3002
     }
   ]
 }
