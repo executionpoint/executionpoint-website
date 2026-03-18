@@ -549,6 +549,27 @@
       .audit-form-card { margin: 0 -4px; }
       .container { padding: 0 20px; }
     }
+    .audit-contact-alt { margin-top: 40px; text-align: center; }
+    .audit-contact-label {
+      font-family: var(--sans);
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.50);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .audit-contact-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+    .audit-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--sans);
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .audit-contact-item:hover { color: var(--teal-lt); }
   </style>
   <script type="application/ld+json">
   {
@@ -875,6 +896,24 @@
       </div>
     </section>
 
+    <section style="padding: 0 0 72px;">
+      <div class="container">
+        <div class="audit-contact-alt">
+          <p class="audit-contact-label">Prefer to reach out directly?</p>
+          <div class="audit-contact-links">
+            <a href="tel:+17866183396" class="audit-contact-item">
+              <span class="audit-contact-icon">📞</span>
+              <span>(786) 618-3396</span>
+            </a>
+            <a href="mailto:info@executionpointconsulting.com" class="audit-contact-item">
+              <span class="audit-contact-icon">✉️</span>
+              <span>info@executionpointconsulting.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -911,6 +950,10 @@
             <a href="about.html">About Us</a>
             <a href="free-ai-audit.html" class="active">Free AI Audit</a>
             <a href="privacy.html">Privacy Policy</a>
+          </div>
+          <div class="footer-contact">
+            <a href="tel:+17866183396">(786) 618-3396</a>
+            <a href="mailto:info@executionpointconsulting.com">info@executionpointconsulting.com</a>
           </div>
         </div>
       </div>

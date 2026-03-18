@@ -1068,6 +1068,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   padding-left: 0;
 }
 .footer-links a:hover { color: rgba(255,255,255,0.75); padding-left: 8px; }
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+.footer-contact a {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+.footer-contact a:hover { color: var(--teal-lt); }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
 .footer-copy {
   font-family: var(--mono);
