@@ -1,6 +1,7 @@
 # Node
 node_modules/
 package-lock.json
+package.json
 
 # OG image generation scripts (temporary files)
 og-image.html
