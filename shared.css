@@ -122,14 +122,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   height: 76px;
-  background: var(--navy-deep);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  background: rgba(13, 27, 42, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   transition: box-shadow 0.3s var(--ease-out), backdrop-filter 0.3s;
 }
 .nav.scrolled {
-  box-shadow: 0 4px 48px rgba(0,0,0,0.55);
-  backdrop-filter: blur(8px);
-  background: rgba(7,22,40,0.97);
+  background: rgba(13, 27, 42, 1);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.25);
 }
 .nav-inner {
   max-width: 1280px;
