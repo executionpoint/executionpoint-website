@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Execution Point Consulting</title>
+  <meta name="description" content="Privacy Policy for Execution Point Consulting LLC. Learn how we collect, use, and protect your information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+
+    /* ── PAGE HERO ── */
+    .privacy-hero {
+      background: var(--navy-deep);
+      padding: 100px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 15% 50%, rgba(14,165,160,0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .privacy-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 20px;
+    }
+    .privacy-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .privacy-hero-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(255,255,255,0.38);
+      margin-top: 20px;
+    }
+
+    /* ── LAYOUT ── */
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 72px;
+      align-items: start;
+      padding: 72px 0 100px;
+    }
+
+    /* ── STICKY TOC ── */
+    .privacy-toc {
+      position: sticky;
+      top: 100px;
+    }
+    .toc-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .toc-list {
+      list-style: none;
+      border-left: 2px solid var(--warm-gray);
+    }
+    .toc-list li a {
+      display: block;
+      padding: 8px 0 8px 16px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-body);
+      line-height: 1.4;
+      transition: color 0.2s, border-color 0.2s;
+      border-left: 2px solid transparent;
+      margin-left: -2px;
+    }
+    .toc-list li a:hover {
+      color: var(--teal);
+      border-left-color: var(--teal-lt);
+    }
+
+    /* ── CONTENT ── */
+    .privacy-content section {
+      margin-bottom: 56px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid var(--warm-gray);
+    }
+    .privacy-content section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .privacy-content h2 {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.2vw, 30px);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.015em;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .privacy-content h2 em {
+      font-style: italic;
+      color: var(--teal);
+      font-weight: 300;
+    }
+    .privacy-content h3 {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 28px 0 10px;
+    }
+    .privacy-content p {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-body);
+      margin-bottom: 16px;
+    }
+    .privacy-content p:last-child { margin-bottom: 0; }
+    .privacy-content ul {
+      list-style: none;
+      margin: 16px 0 20px;
+    }
+    .privacy-content ul li {
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-body);
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+    .privacy-content ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15px;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-lt);
+    }
+    .privacy-content a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .privacy-content a:hover { color: var(--teal-lt); }
+
+    /* ── HIGHLIGHT BOX ── */
+    .privacy-highlight {
+      background: var(--off-white);
+      border-left: 3px solid var(--teal-lt);
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-radius: 0 2px 2px 0;
+    }
+    .privacy-highlight p {
+      font-size: 14px;
+      margin-bottom: 0;
+      color: var(--text-body);
+    }
+    .privacy-highlight strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    /* ── CONTACT CARD ── */
+    .privacy-contact-card {
+      background: var(--navy-deep);
+      border: 1px solid rgba(14,165,160,0.2);
+      padding: 36px 40px;
+      margin-top: 8px;
+    }
+    .privacy-contact-card p {
+      color: rgba(255,255,255,0.6);
+    }
+    .privacy-contact-card strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .privacy-contact-card a {
+      color: var(--teal-lt);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .privacy-layout { grid-template-columns: 1fr; gap: 48px; }
+      .privacy-toc { position: static; }
+      .toc-list { display: flex; flex-wrap: wrap; gap: 4px; border-left: none; }
+      .toc-list li a { border: 1px solid var(--warm-gray); padding: 6px 14px; border-left: 1px solid var(--warm-gray); margin-left: 0; font-size: 12px; }
+      .toc-list li a:hover { border-color: var(--teal-lt); }
+    }
+    @media (max-width: 600px) {
+      .privacy-hero { padding: 80px 0 56px; }
+      .privacy-content section { margin-bottom: 40px; padding-bottom: 40px; }
+      .container { padding: 0 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="services/staff-augmentation.html" class="mega-link">Staff Augmentation</a>
+              <a href="services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <a href="free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="services/staff-augmentation.html" class="mobile-mega-link">Staff Augmentation</a>
+      <a href="services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="privacy-hero">
+      <div class="container">
+        <div class="privacy-eyebrow">Legal</div>
+        <h1>Privacy Policy</h1>
+        <p style="font-family:var(--sans);font-size:16px;font-weight:300;color:rgba(255,255,255,0.55);max-width:520px;line-height:1.7;margin-top:12px;">
+          How Execution Point Consulting collects, uses, and protects your information.
+        </p>
+        <div class="privacy-hero-meta">Effective Date: March 1, 2026 &nbsp;·&nbsp; Last Updated: March 1, 2026</div>
+      </div>
+    </section>
+
+    <!-- ═══ CONTENT ═══ -->
+    <div style="background: var(--white);">
+      <div class="container">
+        <div class="privacy-layout">
+
+          <!-- Sticky TOC -->
+          <aside class="privacy-toc reveal">
+            <div class="toc-label">Contents</div>
+            <ul class="toc-list">
+              <li><a href="#overview">1. Overview</a></li>
+              <li><a href="#information-we-collect">2. Information We Collect</a></li>
+              <li><a href="#how-we-use">3. How We Use It</a></li>
+              <li><a href="#sharing">4. Sharing & Disclosure</a></li>
+              <li><a href="#cookies">5. Cookies</a></li>
+              <li><a href="#retention">6. Data Retention</a></li>
+              <li><a href="#your-rights">7. Your Rights</a></li>
+              <li><a href="#security">8. Security</a></li>
+              <li><a href="#children">9. Children's Privacy</a></li>
+              <li><a href="#changes">10. Changes to This Policy</a></li>
+              <li><a href="#contact">11. Contact Us</a></li>
+            </ul>
+          </aside>
+
+          <!-- Main content -->
+          <div class="privacy-content reveal reveal-delay-1">
+
+            <section id="overview">
+              <h2>Overview</h2>
+              <p>Execution Point Consulting LLC ("Execution Point," "we," "us," or "our") operates the website <strong>executionpointconsulting.com</strong> and provides AI and automation consulting services to small and mid-sized businesses.</p>
+              <p>This Privacy Policy explains what information we collect when you visit our website or engage with our services, how we use that information, and what choices you have. We are committed to protecting your privacy and handling your data with care and transparency.</p>
+              <div class="privacy-highlight">
+                <p><strong>Short version:</strong> We collect only what we need to serve you, we don't sell your data, and we give you control over your information.</p>
+              </div>
+            </section>
+
+            <section id="information-we-collect">
+              <h2>Information <em>We Collect</em></h2>
+
+              <h3>Information you give us directly</h3>
+              <ul>
+                <li><strong>Contact form submissions</strong> — your name, email address, phone number, and any message you send us.</li>
+                <li><strong>Audit booking</strong> — when you schedule a Free AI Audit via Calendly, they collect your name and email on our behalf.</li>
+                <li><strong>Email correspondence</strong> — any information you share when you email us directly.</li>
+              </ul>
+
+              <h3>Information collected automatically</h3>
+              <ul>
+                <li><strong>Usage data</strong> — pages visited, time spent, referring URLs, and browser/device type, collected via analytics tools.</li>
+                <li><strong>IP address</strong> — used for approximate geolocation and security purposes. We do not store it long-term.</li>
+                <li><strong>Cookies and similar technologies</strong> — see Section 5 for details.</li>
+              </ul>
+
+              <h3>Information we do not collect</h3>
+              <ul>
+                <li>We do not collect payment or financial information directly. Any transactions are processed by third-party providers.</li>
+                <li>We do not collect sensitive personal information (Social Security numbers, health data, etc.).</li>
+                <li>We do not use facial recognition or biometric data.</li>
+              </ul>
+            </section>
+
+            <section id="how-we-use">
+              <h2>How We <em>Use It</em></h2>
+              <p>We use the information we collect to:</p>
+              <ul>
+                <li>Respond to your inquiries and schedule consultations.</li>
+                <li>Deliver and improve our consulting services.</li>
+                <li>Send relevant communications (service updates, follow-ups) — only when you've opted in or have an existing relationship with us.</li>
+                <li>Analyze how our website is used so we can make it better.</li>
+                <li>Comply with legal obligations.</li>
+              </ul>
+              <p>We do not use your data for automated decision-making or profiling that produces legal or similarly significant effects.</p>
+            </section>
+
+            <section id="sharing">
+              <h2>Sharing <em>&amp; Disclosure</em></h2>
+              <p>We do not sell, rent, or trade your personal information. We may share it only in these limited circumstances:</p>
+
+              <h3>Service providers</h3>
+              <p>We work with trusted third-party tools to operate our business, including:</p>
+              <ul>
+                <li><strong>Calendly</strong> — for scheduling consultations.</li>
+                <li><strong>Google Analytics / similar</strong> — for website analytics (anonymized).</li>
+                <li><strong>Email service providers</strong> — to send and manage communications.</li>
+              </ul>
+              <p>These providers are contractually required to protect your data and may only use it to provide services to us.</p>
+
+              <h3>Legal requirements</h3>
+              <p>We may disclose information if required by law, court order, or to protect the rights and safety of our clients or the public.</p>
+
+              <h3>Business transfers</h3>
+              <p>If Execution Point Consulting is acquired or merges with another entity, your information may be transferred as part of that transaction. We will notify you before your data is subject to a different privacy policy.</p>
+            </section>
+
+            <section id="cookies">
+              <h2>Cookies</h2>
+              <p>Our website uses cookies and similar tracking technologies to enhance your experience and understand how visitors use our site.</p>
+
+              <h3>Types of cookies we use</h3>
+              <ul>
+                <li><strong>Essential cookies</strong> — required for the site to function (e.g., session management).</li>
+                <li><strong>Analytics cookies</strong> — help us understand traffic patterns and improve content (e.g., Google Analytics). These are anonymized where possible.</li>
+                <li><strong>Preference cookies</strong> — remember your settings such as language preference.</li>
+              </ul>
+
+              <h3>Your choices</h3>
+              <p>You can control cookies through your browser settings. Note that disabling certain cookies may affect site functionality. You may also opt out of Google Analytics by using the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+            </section>
+
+            <section id="retention">
+              <h2>Data <em>Retention</em></h2>
+              <p>We retain your personal information only as long as necessary to fulfill the purposes described in this policy or as required by law.</p>
+              <ul>
+                <li><strong>Contact inquiries</strong> — retained for up to 2 years after last communication.</li>
+                <li><strong>Client project data</strong> — retained for the duration of the engagement and up to 3 years after, for reference and legal compliance.</li>
+                <li><strong>Analytics data</strong> — retained in anonymized form per the settings of our analytics provider.</li>
+              </ul>
+              <p>When data is no longer needed, we securely delete or anonymize it.</p>
+            </section>
+
+            <section id="your-rights">
+              <h2>Your <em>Rights</em></h2>
+              <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+              <ul>
+                <li><strong>Access</strong> — request a copy of the personal information we hold about you.</li>
+                <li><strong>Correction</strong> — ask us to correct inaccurate or incomplete information.</li>
+                <li><strong>Deletion</strong> — request that we delete your personal data, subject to legal requirements.</li>
+                <li><strong>Opt-out</strong> — unsubscribe from marketing emails at any time using the link in any email we send.</li>
+                <li><strong>Portability</strong> — receive your data in a structured, commonly used format.</li>
+              </ul>
+              <div class="privacy-highlight">
+                <p><strong>Florida residents</strong> may have additional rights under applicable state privacy law. <strong>EU/EEA residents</strong> have rights under the General Data Protection Regulation (GDPR). To exercise any of these rights, contact us at the address below.</p>
+              </div>
+            </section>
+
+            <section id="security">
+              <h2>Security</h2>
+              <p>We take reasonable technical and organizational measures to protect your information from unauthorized access, disclosure, or loss. These include encrypted communications (HTTPS), access controls, and regular review of our data practices.</p>
+              <p>However, no method of transmission over the internet is 100% secure. We encourage you to use strong passwords and exercise caution when sharing personal information online.</p>
+            </section>
+
+            <section id="children">
+              <h2>Children's Privacy</h2>
+              <p>Our website and services are intended for business professionals and are not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal data, please contact us and we will promptly delete it.</p>
+            </section>
+
+            <section id="changes">
+              <h2>Changes to <em>This Policy</em></h2>
+              <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we make material changes, we will update the "Last Updated" date at the top of this page.</p>
+              <p>We encourage you to review this page periodically. Continued use of our website after changes are posted constitutes acceptance of the updated policy.</p>
+            </section>
+
+            <section id="contact">
+              <h2>Contact <em>Us</em></h2>
+              <p>If you have questions about this Privacy Policy or want to exercise your rights, please reach out:</p>
+              <div class="privacy-contact-card">
+                <p><strong>Execution Point Consulting LLC</strong></p>
+                <p style="margin-top:12px;">Email: <a href="mailto:info@executionpointconsulting.com">info@executionpointconsulting.com</a></p>
+                <p>Website: <a href="https://executionpointconsulting.com">executionpointconsulting.com</a></p>
+                <p style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.38);">We aim to respond to all privacy-related inquiries within 5 business days.</p>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="services/process-documentation.html">Process Documentation</a>
+            <a href="services/ai-implementation.html">AI Implementation</a>
+            <a href="services/training-enablement.html">Training & Enablement</a>
+            <a href="services/staff-augmentation.html">Staff Augmentation</a>
+            <a href="services/ai-strategy.html">AI Strategy</a>
+            <a href="services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="industries/insurance.html">Insurance Agencies</a>
+            <a href="industries/professional-services.html">Professional Services</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="free-ai-audit.html">Free AI Audit</a>
+            <a href="privacy.html" class="active">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) {
+        bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+      }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

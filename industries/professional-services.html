@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI for Professional Services & Law Firms — Execution Point Consulting</title>
+  <meta name="description" content="Compliance-first AI and automation for professional services firms and law firms. Client intake, billing workflows, matter management, and deadline tracking — automated." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    .section-heading.on-dark em { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      main > section[style*="background: var(--navy)"],
+      main > section[style*="background: var(--off-white)"] {
+        padding: 56px 0 !important;
+      }
+    }
+
+    .page-hero {
+      background-image: url('../images/point-normal-LAsBMFrH_WY-unsplash.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+    .page-hero::before {
+      background: linear-gradient(105deg, rgba(3,14,27,0.91) 0%, rgba(3,14,27,0.76) 42%, rgba(3,14,27,0.46) 64%, rgba(3,14,27,0.20) 100%);
+    }
+    .hero-grid-texture {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(42,173,162,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(42,173,162,0.055) 1px, transparent 1px);
+      background-size: 64px 64px; pointer-events: none; z-index: 1;
+    }
+    .hero-teal-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 52% 78% at 26% 54%, rgba(42,173,162,0.20) 0%, transparent 60%);
+      pointer-events: none; z-index: 1;
+    }
+    .page-hero .container { position: relative; z-index: 2; }
+
+    /* Hero entrance animations */
+    .page-hero .breadcrumb { opacity: 0; transform: translateY(16px); animation: fadeUp 0.6s var(--ease-out) 0.1s forwards; }
+    .page-hero .hero-tag {
+      display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 18px;
+      opacity: 0; transform: translateY(16px); animation: fadeUp 0.6s var(--ease-out) 0.2s forwards;
+    }
+    .page-hero .hero-title  { animation-delay: 0.35s; }
+    .page-hero .hero-body   { animation-delay: 0.5s; }
+    .page-hero .hero-checklist { animation-delay: 0.65s; }
+
+    /* Hero checklist panel */
+    .hero-checklist {
+      background: rgba(3,14,27,0.55); border: none;
+      border-left: 3px solid rgba(42,173,162,0.4); border-top: none;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 28px;
+    }
+    .hc-icon { display: flex; align-items: center; justify-content: center; width: 24px; flex-shrink: 0; }
+    .hc-icon svg { width: 18px; height: 18px; stroke: #2AADA2; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Section divider */
+    .section-teal-divider { height: 1px; background: linear-gradient(to right, var(--teal-lt), rgba(42,173,162,0.15) 60%, transparent); width: 100%; }
+
+    /* Credibility strip */
+    .cred-strip { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); height: 68px; display: flex; align-items: center; justify-content: center; gap: 0; overflow: hidden; }
+    .cred-item { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.48); letter-spacing: 0.1em; text-transform: uppercase; padding: 0 36px; white-space: nowrap; }
+    .cred-item + .cred-item { border-left: 1px solid rgba(255,255,255,0.08); }
+    .cred-icon { width: 20px; height: 20px; background: rgba(42,173,162,0.12); border: 1px solid rgba(42,173,162,0.30); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cred-icon svg { width: 11px; height: 11px; stroke: var(--teal-lt); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Visual break */
+    .ps-visual-break { position: relative; height: 420px; overflow: hidden; display: flex; align-items: center; background: var(--navy-deep); }
+    .ps-visual-break-photo {
+      position: absolute; inset: 0;
+      background-image: url('../images/possessed-photography-JlJudeLM-5s-unsplash.jpg');
+      background-size: cover; background-position: center center;
+      transform: scale(1.04); transition: transform 9s ease; filter: saturate(0.95) brightness(1.0); z-index: 0;
+    }
+    .ps-visual-break:hover .ps-visual-break-photo { transform: scale(1.0); }
+    .ps-visual-break-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(7,22,40,0.90) 0%, rgba(7,22,40,0.72) 30%, rgba(7,22,40,0.28) 58%, rgba(7,22,40,0.04) 100%);
+      z-index: 1;
+    }
+    .ps-visual-break-grid {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(42,173,162,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(42,173,162,0.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 55%);
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 55%);
+      z-index: 2; pointer-events: none;
+    }
+    .ps-visual-break .container { position: relative; z-index: 3; }
+    .ps-visual-break-content { max-width: 620px; }
+    .ps-visual-break-quote {
+      font-family: var(--serif); font-size: clamp(22px, 2.2vw, 36px); font-weight: 400; font-style: italic;
+      color: var(--white); line-height: 1.44; border-left: 3px solid var(--gold); padding-left: 32px; margin: 0 0 28px;
+    }
+    .ps-visual-break-quote strong { font-weight: 600; font-style: normal; color: var(--gold); }
+    .ps-visual-break-attr { padding-left: 32px; font-family: var(--sans); font-size: 13px; font-weight: 400; color: rgba(255,255,255,0.38); letter-spacing: 0.04em; }
+
+    /* Services hover glow */
+    .section-services .card:hover {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 0 0 1px rgba(42,173,162,0.14), 0 6px 28px rgba(42,173,162,0.12), 0 0 48px rgba(42,173,162,0.09);
+    }
+
+    /* CTA urgency */
+    .audit-urgency { font-family: var(--mono); font-size: 11px; color: #2AADA2; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+
+    @media (max-width: 768px) {
+      .cred-strip { height: auto; flex-direction: column; padding: 20px; gap: 0; }
+      .cred-item { padding: 14px 0; border-left: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; justify-content: center; }
+      .cred-item:last-child { border-bottom: none; }
+      .ps-visual-break { height: 320px; }
+      .ps-visual-break-content { max-width: 100%; }
+      .ps-visual-break-quote { font-size: clamp(18px, 4.5vw, 26px) !important; padding-left: 20px; }
+      .ps-visual-break-attr { padding-left: 20px; font-size: 12px; }
+    }
+    @media (max-width: 480px) { .ps-visual-break { height: 260px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="../what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="../services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="../services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="../services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="../services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="../services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="../services/staff-augmentation.html" class="mega-link">Staff Augmentation</a>
+              <a href="../services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="../industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="../industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="../industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="../industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../about.html">About Us</a></li>
+      </ul>
+      <a href="../free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="../what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="../services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="../services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="../services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="../services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="../services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="../services/staff-augmentation.html" class="mobile-mega-link">Staff Augmentation</a>
+      <a href="../services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="../industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="../industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="../industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="../industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="../about.html">About Us</a>
+    <a href="../free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="hero-grid-texture"></div>
+      <div class="hero-teal-glow"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../industries.html">Industries</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Professional Services & Law Firms</span>
+        </div>
+        <div class="hero-layout">
+          <div>
+            <span class="hero-tag">Industry · Professional Services & Law</span>
+            <h1 class="hero-title">Your billable hours shouldn't<br>be spent on <em>administrative work.</em></h1>
+            <p class="hero-body">Professional services firms and law firms are built on expertise. The problem is that expertise gets buried under intake forms, billing disputes, deadline management, and client status emails. We automate the overhead so your team can focus on the work that actually requires them.</p>
+          </div>
+          <div class="hero-checklist">
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Client intake automation</span>
+                <span class="hc-sub">Consistent, complete, conflict-checked</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Proposal & engagement letters</span>
+                <span class="hc-sub">Generated in minutes, not hours</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Deadline & matter tracking</span>
+                <span class="hc-sub">Nothing falls through the cracks</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Billing workflow automation</span>
+                <span class="hc-sub">Faster invoicing, fewer write-offs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-teal-divider"></div>
+
+    <div class="cred-strip">
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        Compliance-First Methodology
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        20+ Years Enterprise Experience
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        Bilingual Consultations — EN / ES
+      </div>
+    </div>
+
+    <section style="background: var(--navy); padding: 96px 0 112px; position: relative; overflow: hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 80% 50%, rgba(42,173,162,0.06) 0%, transparent 60%);pointer-events:none;"></div>
+      <div class="container" style="position:relative; z-index:1;">
+        <div class="section-header reveal">
+          <div class="section-label on-dark">Problems We Solve</div>
+          <h2 class="section-heading on-dark" style="font-size:clamp(32px,3.5vw,50px);">The overhead that<br><em>drains billable capacity.</em></h2>
+        </div>
+        <div class="grid-2">
+
+          <div class="card card-problem reveal">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+              </div>
+              <span class="card-tag">Intake</span>
+            </div>
+            <h3 class="card-title">Client intake is inconsistent and slow</h3>
+            <p class="card-body">New client onboarding depends on whoever handles the intake. Information is collected inconsistently, conflict checks happen manually if at all, and the engagement can't begin until someone assembles a complete file — which takes longer than it should.</p>
+            <div class="prob-solution">→ Structured intake workflow with automated data collection, conflict checks, and file assembly</div>
+          </div>
+
+          <div class="card card-problem reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              </div>
+              <span class="card-tag">Proposals</span>
+            </div>
+            <h3 class="card-title">Proposals and engagement letters take too long</h3>
+            <p class="card-body">Every proposal starts from scratch or from a template someone has to find and customize. Engagement letters require manual drafting for each matter. Work that could take minutes takes hours, and opportunities go cold while documents are being prepared.</p>
+            <div class="prob-solution">→ AI-assisted proposal and engagement letter generation from structured intake data</div>
+          </div>
+
+          <div class="card card-problem reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <span class="card-tag">Deadlines</span>
+            </div>
+            <h3 class="card-title">Deadlines tracked in too many places</h3>
+            <p class="card-body">Statute of limitations dates, filing deadlines, response windows, and client deliverable dates are spread across calendars, practice management systems, and individual notes. A missed deadline in a law firm isn't an inconvenience — it's a malpractice claim.</p>
+            <div class="prob-solution">→ Centralized deadline tracking with automated alerts and escalation protocols</div>
+          </div>
+
+          <div class="card card-problem reveal reveal-delay-2">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <span class="card-tag">Billing</span>
+            </div>
+            <h3 class="card-title">Billing leakage from time capture gaps</h3>
+            <p class="card-body">Time entries logged at the end of the day or week are incomplete. Work gets done and never billed. Write-offs happen because invoices go out late and clients push back on charges they don't remember. Revenue walks out the door quietly.</p>
+            <div class="prob-solution">→ Automated time capture prompts, billing reminders, and invoice generation workflows</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="ps-visual-break">
+      <div class="ps-visual-break-photo"></div>
+      <div class="ps-visual-break-overlay"></div>
+      <div class="ps-visual-break-grid"></div>
+      <div class="container">
+        <div class="ps-visual-break-content">
+          <blockquote class="ps-visual-break-quote">In professional services, time is the product. Every hour your team spends on administrative work is an hour that doesn't bill — and <strong>a client who doesn't get the attention they're paying for.</strong></blockquote>
+          <p class="ps-visual-break-attr">Operational principle · Execution Point Consulting</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-services" style="background: var(--off-white); padding: 96px 0 112px;">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Relevant Services</div>
+          <h2 class="section-heading" style="font-size:clamp(32px,3.5vw,50px);">What we typically<br>build for <em>professional services firms.</em></h2>
+        </div>
+        <div class="grid-3">
+
+          <div class="card reveal">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              </div>
+              <span class="card-tag">Readiness</span>
+            </div>
+            <h3 class="card-title">AI Readiness Suite</h3>
+            <p class="card-body">We assess your operations, data, and confidentiality requirements before recommending anything. Every engagement starts here.</p>
+            <a href="../services/ai-readiness-suite.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <span class="card-tag">Build</span>
+            </div>
+            <h3 class="card-title">AI & Automation Implementation</h3>
+            <p class="card-body">Intake workflows, proposal generation, deadline tracking, billing automation, and client communication systems. Built with your confidentiality requirements in mind.</p>
+            <a href="../services/ai-implementation.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="22" height="22"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              </div>
+              <span class="card-tag">Retainer</span>
+            </div>
+            <h3 class="card-title">AI Operations Retainer</h3>
+            <p class="card-body">Ongoing optimization and compliance monitoring as your practice areas and team evolve. We keep your systems performing as your firm grows.</p>
+            <a href="../services/operations-retainer.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+          <a href="../what-we-do.html" style="font-family:var(--mono); font-size:12px; color:var(--teal-lt); letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid rgba(42,173,162,0.35); padding-bottom:2px;">Explore all 7 services →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit-cta">
+      <div class="container">
+        <div class="audit-cta-inner">
+          <div class="reveal">
+            <p class="audit-eyebrow">Start Here</p>
+            <h2 class="audit-headline">Find out which workflows your firm<br>can <em>automate in the next 30 days.</em></h2>
+            <p class="audit-body">Book the free AI audit. In 60–90 minutes we walk your operations, identify every intake, billing, and deadline workflow ready for automation, and deliver a written ROI report within 48 hours. No cost. No obligation. You keep the report either way.</p>
+          </div>
+          <div class="audit-cta-right reveal reveal-delay-2">
+            <p class="audit-urgency">Limited audit slots available each month.</p>
+            <a href="../free-ai-audit.html" class="btn-audit">Book Your Free AI Audit</a>
+            <p class="audit-hint">Schedule via Calendly · 2 minutes<br>Bilingual consultations available (EN/ES)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="../services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="../services/process-documentation.html">Process Documentation</a>
+            <a href="../services/ai-implementation.html">AI Implementation</a>
+            <a href="../services/training-enablement.html">Training & Enablement</a>
+            <a href="../services/staff-augmentation.html">Staff Augmentation</a>
+            <a href="../services/ai-strategy.html">AI Strategy</a>
+            <a href="../services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="real-estate.html">Real Estate Brokerages</a>
+            <a href="insurance.html">Insurance Agencies</a>
+            <a href="professional-services.html">Professional Services & Law Firms</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="../about.html">About Us</a>
+            <a href="../free-ai-audit.html">Free AI Audit</a>
+            <a href="../resources.html">Resources</a>
+            <a href="../privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) { bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; bars[1].style.opacity = '0'; bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; }); }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

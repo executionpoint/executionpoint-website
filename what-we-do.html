@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What We Do — Execution Point Consulting</title>
+  <meta name="description" content="AI and automation services for regulated industries. From readiness assessments to full implementation, training, and ongoing operations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ── SECTION 1: PAGE HERO — what-we-do specific ── */
+
+    .page-hero {
+      background-image: url('images/boliviainteligente-7ASW2-HaOAo-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Override shared.css ::before — dark overlay + teal grid + radial glow */
+    .page-hero::before {
+      background:
+        radial-gradient(ellipse 58% 75% at 22% 58%, rgba(42,173,162,0.22) 0%, transparent 65%),
+        radial-gradient(ellipse 35% 45% at 5% 90%, rgba(201,168,76,0.06) 0%, transparent 55%),
+        linear-gradient(rgba(42,173,162,0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,173,162,0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(3,14,27,0.88) 0%, rgba(3,14,27,0.80) 100%);
+      background-size:
+        100% 100%,
+        100% 100%,
+        32px 32px,
+        32px 32px,
+        100% 100%;
+    }
+
+    /* Show and animate the eyebrow label */
+    .page-hero .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.6s var(--ease-out) 0.15s forwards;
+    }
+    .page-hero .page-hero-eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1px;
+      background: var(--teal-lt);
+      display: block;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION 2: SERVICE JOURNEY TIMELINE ── */
+    .service-timeline {
+      display: flex;
+      align-items: center;
+      margin-bottom: 52px;
+      padding: 28px 36px;
+      background: var(--white);
+      border: 1px solid rgba(14,165,160,0.12);
+      border-radius: 3px;
+    }
+    .st-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0;
+    }
+    .st-num {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+    }
+    .st-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+    .st-connector {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, rgba(42,173,162,0.45), rgba(42,173,162,0.15));
+      margin: 0 12px;
+      margin-bottom: 20px; /* offset down to align with labels row */
+    }
+    @media (max-width: 768px) {
+      .service-timeline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding: 24px 20px;
+      }
+      .st-step {
+        flex-direction: row;
+        gap: 12px;
+        padding: 10px 0;
+      }
+      .st-num { font-size: 12px; }
+      .st-label { font-size: 10px; }
+      .st-connector {
+        width: 1px;
+        height: 20px;
+        background: linear-gradient(to bottom, rgba(42,173,162,0.45), rgba(42,173,162,0.15));
+        margin: 0 0 0 5px;
+        flex: none;
+      }
+    }
+
+    /* ── SECTION 4: CARD GROUP LABELS ── */
+    .card-group { margin-bottom: 48px; }
+    .card-group:last-child { margin-bottom: 0; }
+    .card-group-label {
+      margin-bottom: 24px;
+    }
+
+    /* ── SECTION 5: RETAINER CARD — distinct styling ── */
+    .card-retainer {
+      background: rgba(7, 22, 40, 0.96) !important;
+      border-top: 3px solid var(--gold) !important;
+      border-left: none;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18), inset 0 0 0 1px rgba(201,168,76,0.12);
+    }
+    .card-retainer .card-title,
+    .card-retainer .card-body {
+      color: rgba(255,255,255,0.88);
+    }
+    .card-retainer .card-body {
+      color: rgba(255,255,255,0.58);
+    }
+    .card-retainer .card-tag {
+      background: rgba(201,168,76,0.12);
+      color: var(--gold);
+      border-color: rgba(201,168,76,0.25);
+    }
+    .card-retainer .card-link {
+      color: var(--gold);
+    }
+    .card-retainer .card-link:hover {
+      color: var(--gold-lt, #e8d48a);
+    }
+    .card-retainer:hover {
+      box-shadow: 0 24px 60px rgba(0,0,0,0.28), inset 0 0 0 1px rgba(201,168,76,0.22), 0 0 40px rgba(201,168,76,0.06) !important;
+    }
+
+    /* ── SECTION 6: VISUAL BREAK ── */
+    .wwd-visual-break {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background-color: var(--navy-deep);
+    }
+    .wwd-visual-break-photo {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/pexels-nguyenvung87-30079262.jpg');
+      background-size: cover;
+      background-position: center;
+      transition: transform 9s ease;
+      filter: saturate(0.8) brightness(0.92);
+      z-index: 0;
+    }
+    .wwd-visual-break:hover .wwd-visual-break-photo { transform: scale(1.0); }
+    .wwd-visual-break-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(7,22,40,0.97) 0%,
+        rgba(7,22,40,0.95) 30%,
+        rgba(7,22,40,0.60) 55%,
+        rgba(7,22,40,0.12) 100%
+      );
+      z-index: 1;
+    }
+    .wwd-visual-break-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(42,173,162,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,173,162,0.07) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.6;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .wwd-visual-break-content {
+      position: relative;
+      z-index: 3;
+      max-width: 620px;
+    }
+    .wwd-visual-break-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+    .wwd-visual-break-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--gold);
+      display: block;
+    }
+    .wwd-visual-break-quote {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.4vw, 40px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.3;
+      border-left: 3px solid var(--gold);
+      padding-left: 32px;
+      margin: 0 0 28px;
+    }
+    .wwd-visual-break-attr {
+      padding-left: 32px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.42);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 900px) {
+      .wwd-visual-break { height: 340px; }
+    }
+    @media (max-width: 768px) {
+      .wwd-visual-break { height: 320px; }
+      .wwd-visual-break-quote { font-size: clamp(20px, 4.5vw, 28px); padding-left: 20px; }
+      .wwd-visual-break-attr { padding-left: 20px; font-size: 12px; }
+      .wwd-visual-break-content { max-width: 100%; }
+    }
+    @media (max-width: 480px) {
+      .wwd-visual-break { height: 280px; }
+      .wwd-visual-break-quote { font-size: clamp(18px, 5vw, 24px); }
+    }
+
+    /* Page-specific: wide retainer card row layout */
+
+    /* ── 1100px: services grid drops to 2 columns ── */
+    @media (max-width: 1100px) {
+      .grid-3:has(.card[style*="grid-column: span 3"]) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── 768px: mobile overrides ── */
+    @media (max-width: 768px) {
+
+      /* Services section inline padding reduction */
+      main > section[style*="padding: 96px"] {
+        padding: 56px 0 64px !important;
+      }
+
+      /* Services grid → 1 column */
+      .grid-3 {
+        grid-template-columns: 1fr !important;
+      }
+
+      /* Wide retainer card: reset span and flip to column layout */
+      .card[style*="grid-column: span 3"] {
+        grid-column: span 1 !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 20px !important;
+      }
+
+      /* Retainer left column: full width */
+      .card[style*="grid-column: span 3"] .retainer-left {
+        width: 100% !important;
+      }
+
+      /* Retainer card body: restore bottom margin for stacked layout */
+      .card[style*="grid-column: span 3"] .card-body {
+        margin-bottom: 0 !important;
+      }
+
+      /* Retainer link: no longer needs flex-shrink override */
+      .card[style*="grid-column: span 3"] .card-link {
+        flex-shrink: unset !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="services/staff-augmentation.html" class="mega-link">Staff Augmentation</a>
+              <a href="services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <a href="free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="services/staff-augmentation.html" class="mobile-mega-link">Staff Augmentation</a>
+      <a href="services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="page-hero-eyebrow">Our Services</span>
+        <h1 class="page-hero-title">Every engagement starts with<br><em>diagnosis, not prescription.</em></h1>
+        <p class="page-hero-body">Seven services covering every stage of your AI journey. We never recommend a solution before understanding your operations, data, and compliance environment.</p>
+      </div>
+    </section>
+
+    <section style="background: var(--off-white); padding: 96px 0 112px; position: relative;">
+      <div class="container">
+
+        <!-- Service Journey Timeline -->
+        <div class="service-timeline reveal">
+          <div class="st-step">
+            <span class="st-num">01</span>
+            <span class="st-label">Assess</span>
+          </div>
+          <div class="st-connector"></div>
+          <div class="st-step">
+            <span class="st-num">02</span>
+            <span class="st-label">Document</span>
+          </div>
+          <div class="st-connector"></div>
+          <div class="st-step">
+            <span class="st-num">03</span>
+            <span class="st-label">Build</span>
+          </div>
+          <div class="st-connector"></div>
+          <div class="st-step">
+            <span class="st-num">04</span>
+            <span class="st-label">Train</span>
+          </div>
+          <div class="st-connector"></div>
+          <div class="st-step">
+            <span class="st-num">05</span>
+            <span class="st-label">Scale</span>
+          </div>
+        </div>
+
+        <!-- ── FOUNDATION GROUP ── -->
+        <div class="card-group">
+          <div class="card-group-label">
+            <span class="section-label">Foundation</span>
+          </div>
+          <div class="grid-3">
+
+            <div class="card reveal">
+              <div class="card-header">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7.5"/><line x1="16.5" y1="16.5" x2="21" y2="21"/><path d="M8.5 11l2 2 3.5-3.5"/></svg></div>
+                <span class="card-tag">Readiness</span>
+              </div>
+              <h2 class="card-title">AI Readiness Suite</h2>
+              <p class="card-body">Three assessments covering your operations, data, and compliance exposure. You receive a prioritized action plan within 48 hours — yours to keep regardless of whether you engage us further.</p>
+              <a href="services/ai-readiness-suite.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+            <div class="card reveal reveal-delay-1">
+              <div class="card-header">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="14" y2="17"/></svg></div>
+                <span class="card-tag">SOPs</span>
+              </div>
+              <h2 class="card-title">Process Documentation & SOPs</h2>
+              <p class="card-body">We map your current workflows, document SOPs, and tag every automation opportunity. The foundation all AI work is built on, and a knowledge base your team owns permanently.</p>
+              <a href="services/process-documentation.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+            <div class="card reveal reveal-delay-2">
+              <div class="card-header">
+                <div class="card-icon gold-icon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></div>
+                <span class="card-tag">Strategy</span>
+              </div>
+              <h2 class="card-title">AI Strategy Consulting</h2>
+              <p class="card-body">For clients who want the full strategic picture before committing to implementation. We deliver a prioritized 12–24 month roadmap your leadership team can execute against.</p>
+              <a href="services/ai-strategy.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ── DELIVERY GROUP ── -->
+        <div class="card-group">
+          <div class="card-group-label">
+            <span class="section-label">Delivery</span>
+          </div>
+          <div class="grid-3">
+
+            <div class="card reveal">
+              <div class="card-header">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                <span class="card-tag">Build</span>
+              </div>
+              <h2 class="card-title">AI & Automation Implementation</h2>
+              <p class="card-body">We build AI agents, process automations, and system integrations. Platform-agnostic, compliance-reviewed, and fully documented before anything goes live.</p>
+              <a href="services/ai-implementation.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+            <div class="card reveal reveal-delay-1">
+              <div class="card-header">
+                <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.686 3 6 3s6-1.34 6-3v-5"/></svg></div>
+                <span class="card-tag">Training</span>
+              </div>
+              <h2 class="card-title">AI Training & Enablement</h2>
+              <p class="card-body">Role-specific training, recorded walkthroughs, and AI literacy workshops. We make your team genuine owners of what we build, not just users of it.</p>
+              <a href="services/training-enablement.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+            <div class="card reveal reveal-delay-2">
+              <div class="card-header">
+                <div class="card-icon gold-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+                <span class="card-tag">Talent</span>
+              </div>
+              <h2 class="card-title">Staff Augmentation</h2>
+              <p class="card-body">Vetted Latin American AI developers and automation specialists through our co-founder's network. US time zone aligned, evaluated on real projects, not just resumes.</p>
+              <a href="services/staff-augmentation.html" class="card-link">Learn More <span>→</span></a>
+            </div>
+
+            <div class="card card-retainer reveal" style="grid-column: span 3; flex-direction: row; align-items: center; gap: 40px;">
+              <div class="retainer-left" style="flex-shrink:0; width: 220px;">
+                <div class="card-header" style="flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 0;">
+                  <div class="card-icon gold-icon"><svg viewBox="0 0 24 24"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg></div>
+                  <span class="card-tag">Retainer</span>
+                </div>
+                <h2 class="card-title" style="margin-top: 14px;">AI Operations Retainer</h2>
+              </div>
+              <p class="card-body" style="margin-bottom: 0; flex: 1;">Ongoing optimization, monthly performance reviews, proactive opportunity identification, and priority support. Your dedicated AI operations team for the long term.</p>
+              <a href="services/operations-retainer.html" class="card-link" style="flex-shrink: 0;">Learn More <span>→</span></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VISUAL BREAK ═══ -->
+    <!-- To swap the photo: replace the background-image URL inside .wwd-visual-break-photo in the <style> block above -->
+    <div class="wwd-visual-break">
+      <div class="wwd-visual-break-photo"></div>
+      <div class="wwd-visual-break-overlay"></div>
+      <div class="wwd-visual-break-grid"></div>
+      <div class="container">
+        <div class="wwd-visual-break-content reveal">
+          <div class="wwd-visual-break-eyebrow">Execution Point Consulting</div>
+          <blockquote class="wwd-visual-break-quote">
+            The businesses that will lead their industries in five years are the ones automating intelligently today.
+          </blockquote>
+          <p class="wwd-visual-break-attr">— Execution Point Consulting</p>
+        </div>
+      </div>
+    </div>
+
+    <section class="audit-cta">
+      <div class="container">
+        <div class="audit-cta-inner">
+          <div class="reveal">
+            <p class="audit-eyebrow">Start Here</p>
+            <h2 class="audit-headline">Every engagement begins<br>with a free AI audit.</h2>
+            <p class="audit-body">60–90 minutes. A complete map of your AI and automation opportunities with quantified ROI. Professional report in 48 hours. No cost, no obligation — you keep the report either way.</p>
+          </div>
+          <div class="audit-cta-right reveal reveal-delay-2">
+            <a href="free-ai-audit.html" class="btn-audit">Book Your Free AI Audit</a>
+            <p class="audit-hint">Schedule via Calendly · 2 minutes<br>Bilingual consultations available (EN/ES)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="services/process-documentation.html">Process Documentation</a>
+            <a href="services/ai-implementation.html">AI Implementation</a>
+            <a href="services/training-enablement.html">Training & Enablement</a>
+            <a href="services/staff-augmentation.html">Staff Augmentation</a>
+            <a href="services/ai-strategy.html">AI Strategy</a>
+            <a href="services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="industries/insurance.html">Insurance Agencies</a>
+            <a href="industries/professional-services.html">Professional Services</a>
+            <a href="industries/law-firms.html">Law Firms</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="free-ai-audit.html">Free AI Audit</a>
+            <a href="resources.html">Resources</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) { bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; bars[1].style.opacity = '0'; bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; }); }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    // Make entire card clickable
+    document.querySelectorAll('.card').forEach(card => {
+      const link = card.querySelector('.card-link');
+      if (link) card.addEventListener('click', () => window.location.href = link.href);
+    });
+  </script>
+</body>
+</html>

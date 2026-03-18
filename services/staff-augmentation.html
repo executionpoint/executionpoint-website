@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Staff Augmentation — Execution Point Consulting</title>
+  <meta name="description" content="Vetted Latin American AI developers and automation specialists. US time zone aligned, evaluated on real projects, not just resumes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../shared.css" />
+  <style>
+    .roles-list { display: flex; flex-direction: column; gap: 0; }
+    .role-item { display: flex; align-items: flex-start; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--warm-gray); }
+    .role-item:first-child { padding-top: 0; }
+    .role-item:last-child { border-bottom: none; }
+    .role-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 8px; }
+    .role-text { font-family: var(--sans); font-size: 13.5px; color: var(--text-body); line-height: 1.5; }
+    .role-text strong { color: var(--navy); font-weight: 500; display: block; margin-bottom: 1px; }
+
+    .page-hero {
+      background-image: url('../images/pexels-brett-sayles-3653997.jpg');
+      background-size: cover;
+      background-position: center center;
+    }
+    .page-hero::before {
+      background: linear-gradient(105deg, rgba(3,14,27,0.93) 0%, rgba(3,14,27,0.82) 42%, rgba(3,14,27,0.60) 64%, rgba(3,14,27,0.35) 100%);
+    }
+    .hero-grid-texture {
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(42,173,162,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(42,173,162,0.055) 1px, transparent 1px);
+      background-size: 64px 64px; pointer-events: none; z-index: 1;
+    }
+    .hero-teal-glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 52% 78% at 26% 54%, rgba(42,173,162,0.20) 0%, transparent 60%);
+      pointer-events: none; z-index: 1;
+    }
+    .page-hero .container { position: relative; z-index: 2; }
+
+    /* Hero entrance animations */
+    .page-hero .breadcrumb { opacity: 0; transform: translateY(16px); animation: fadeUp 0.6s var(--ease-out) 0.1s forwards; }
+    .page-hero .hero-tag {
+      display: block; font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--teal-lt); margin-bottom: 18px;
+      opacity: 0; transform: translateY(16px); animation: fadeUp 0.6s var(--ease-out) 0.2s forwards;
+    }
+    .page-hero .hero-title  { animation-delay: 0.35s; }
+    .page-hero .hero-body   { animation-delay: 0.5s; }
+    .page-hero .hero-checklist { animation-delay: 0.65s; }
+
+    /* Hero checklist panel */
+    .hero-checklist {
+      background: rgba(3,14,27,0.55); border: none;
+      border-left: 3px solid rgba(42,173,162,0.4); border-top: none;
+      backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); padding: 28px;
+    }
+    .hc-icon { display: flex; align-items: center; justify-content: center; width: 24px; flex-shrink: 0; }
+    .hc-icon svg { width: 18px; height: 18px; stroke: #2AADA2; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* Section divider */
+    .section-teal-divider { height: 1px; background: linear-gradient(to right, var(--teal-lt), rgba(42,173,162,0.15) 60%, transparent); width: 100%; }
+
+    /* Credibility strip */
+    .cred-strip { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); height: 68px; display: flex; align-items: center; justify-content: center; gap: 0; overflow: hidden; }
+    .cred-item { display: flex; align-items: center; gap: 12px; font-family: var(--mono); font-size: 11px; font-weight: 400; color: rgba(255,255,255,0.48); letter-spacing: 0.1em; text-transform: uppercase; padding: 0 36px; white-space: nowrap; }
+    .cred-item + .cred-item { border-left: 1px solid rgba(255,255,255,0.08); }
+    .cred-icon { width: 20px; height: 20px; background: rgba(42,173,162,0.12); border: 1px solid rgba(42,173,162,0.30); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cred-icon svg { width: 11px; height: 11px; stroke: var(--teal-lt); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* card-solution icon */
+    .card-header .card-icon svg { width: 24px; height: 24px; stroke: var(--teal-lt); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* CTA urgency */
+    .audit-urgency { font-family: var(--mono); font-size: 11px; color: #2AADA2; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; text-align: center; }
+
+    @media (max-width: 1100px) {
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      section[style*="padding: 96px 0 112px"] { padding: 56px 0 64px !important; }
+      .grid-3 { grid-template-columns: 1fr; gap: 16px; }
+      .role-item { gap: 12px; }
+      .cred-strip { height: auto; flex-direction: column; padding: 20px; gap: 0; }
+      .cred-item { padding: 14px 0; border-left: none !important; border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; justify-content: center; }
+      .cred-item:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      section[style*="padding: 96px 0 112px"] { padding: 44px 0 52px !important; }
+      .role-dot { margin-top: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="../what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="../services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="../services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="../services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="../services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="../services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="../services/staff-augmentation.html" class="mega-link">Staff Augmentation</a>
+              <a href="../services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="../industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="../industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="../industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="../industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../about.html">About Us</a></li>
+      </ul>
+      <a href="../free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="../what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="../services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="../services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="../services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="../services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="../services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="../services/staff-augmentation.html" class="mobile-mega-link">Staff Augmentation</a>
+      <a href="../services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="../industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="../industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="../industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="../industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="../about.html">About Us</a>
+    <a href="../free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="hero-grid-texture"></div>
+      <div class="hero-teal-glow"></div>
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="../what-we-do.html">What We Do</a>
+          <span class="breadcrumb-sep">/</span>
+          <span class="breadcrumb-current">Staff Augmentation</span>
+        </div>
+        <div class="hero-layout">
+          <div>
+            <span class="hero-tag">Service · Talent</span>
+            <h1 class="hero-title">Enterprise-quality AI talent<br>at <em>SMB-friendly pricing.</em></h1>
+            <p class="hero-body">Vetted AI developers and automation specialists from a trusted Latin American engineering network. US time zone aligned, evaluated on real projects, available without the overhead of a US hire.</p>
+          </div>
+          <div class="hero-checklist">
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Latin American Network</span>
+                <span class="hc-sub">Top-tier engineers, US time zone aligned</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Evaluated on Real Projects</span>
+                <span class="hc-sub">Not interviews. Actual technical assessments.</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Compliance-Cleared</span>
+                <span class="hc-sub">Every placement reviewed for regulatory fit</span>
+              </div>
+            </div>
+            <div class="hc-item">
+              <div class="hc-icon">
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div>
+                <span class="hc-title">Fast Placement</span>
+                <span class="hc-sub">Matched and onboarded in days, not months</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-teal-divider"></div>
+
+    <div class="cred-strip">
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        Compliance-First Methodology
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+        </div>
+        20+ Years Enterprise Experience
+      </div>
+      <div class="cred-item">
+        <div class="cred-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        Bilingual Consultations — EN / ES
+      </div>
+    </div>
+
+    <section style="background: var(--white); padding: 96px 0 112px;">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">What Makes It Different</div>
+          <h2 class="section-heading" style="font-size:clamp(32px,3.5vw,50px);">Not a staffing agency.<br><em>A curated technical network.</em></h2>
+        </div>
+        <div class="grid-3">
+
+          <div class="card-solution reveal">
+            <div class="card-header">
+              <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div class="card-tag">Network</div>
+            </div>
+            <h3 class="card-title">Built on a Real Network</h3>
+            <p class="card-body">We have spent years building and working alongside AI engineers and automation specialists across Latin America. Every person in our network has been evaluated firsthand on real technical work, not screened through a database.</p>
+          </div>
+
+          <div class="card-solution reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            </div>
+            <h3 class="card-title">US Time Zone Aligned</h3>
+            <p class="card-body">Our network operates within US Eastern and Central time zones. No 8-hour lag, no async-only workflows. Your augmented team member attends standups, responds in real time, and collaborates like an in-house hire.</p>
+          </div>
+
+          <div class="card-solution reveal reveal-delay-2">
+            <div class="card-header">
+              <div class="card-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            </div>
+            <h3 class="card-title">Compliance-Reviewed Placements</h3>
+            <p class="card-body">Every engagement is reviewed against the compliance requirements of your industry. We ensure proper contracts, data handling agreements, and access controls are in place before your first working session.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--off-white); padding: 96px 0 112px;">
+      <div class="container">
+        <div class="grid-2-split">
+          <div class="reveal">
+            <div class="section-label">Roles We Place</div>
+            <h2 class="section-heading" style="font-size:clamp(28px,3vw,42px); margin-bottom:32px;">Specialists for every<br><em>stage of your build.</em></h2>
+            <div class="roles-list">
+              <div class="role-item">
+                <div class="role-dot"></div>
+                <div class="role-text"><strong>AI Engineer</strong>Builds and fine-tunes AI agents, LLM integrations, and custom model pipelines.</div>
+              </div>
+              <div class="role-item">
+                <div class="role-dot"></div>
+                <div class="role-text"><strong>Automation Developer</strong>Workflow automation, API integrations, and no-code/low-code implementations.</div>
+              </div>
+              <div class="role-item">
+                <div class="role-dot"></div>
+                <div class="role-text"><strong>Data Engineer</strong>Data pipeline design, cleaning, and structuring for AI readiness.</div>
+              </div>
+              <div class="role-item">
+                <div class="role-dot"></div>
+                <div class="role-text"><strong>Backend Developer</strong>Server-side development to support AI system infrastructure and integrations.</div>
+              </div>
+              <div class="role-item">
+                <div class="role-dot"></div>
+                <div class="role-text"><strong>QA & Testing Specialist</strong>Validation, edge case testing, and compliance verification for AI systems.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="reveal reveal-delay-2">
+            <div class="box-dark">
+              <span class="box-dark-label">Our Vetting Standard</span>
+              <h3 class="box-dark-title">Evaluated on work.<br><em>Not on paper.</em></h3>
+              <div class="box-list">
+                <div class="box-list-item">
+                  <div class="box-list-dot"></div>
+                  <div class="box-list-text">Technical assessment on a real project, not a whiteboard exercise or multiple-choice test.</div>
+                </div>
+                <div class="box-list-item">
+                  <div class="box-list-dot"></div>
+                  <div class="box-list-text">Direct review by our team, who has worked alongside these engineers in production environments.</div>
+                </div>
+                <div class="box-list-item">
+                  <div class="box-list-dot"></div>
+                  <div class="box-list-text">English communication evaluated at professional working level, not just basic proficiency.</div>
+                </div>
+                <div class="box-list-item">
+                  <div class="box-list-dot"></div>
+                  <div class="box-list-text">Background and compliance checks completed before any placement in a regulated environment.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="audit-cta">
+      <div class="container">
+        <div class="audit-cta-inner">
+          <div class="reveal">
+            <p class="audit-eyebrow">Start Here</p>
+            <h2 class="audit-headline">Tell us what you need.<br>We'll find the right fit.</h2>
+            <p class="audit-body">Book the free AI audit. We will understand your technical needs, your compliance requirements, and match you with the right specialist from our network.</p>
+          </div>
+          <div class="audit-cta-right reveal reveal-delay-2">
+            <p class="audit-urgency">Limited audit slots available each month.</p>
+            <a href="../free-ai-audit.html" class="btn-audit">Book Your Free AI Audit</a>
+            <p class="audit-hint">Schedule via Calendly · 2 minutes<br>Bilingual consultations available (EN/ES)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="process-documentation.html">Process Documentation</a>
+            <a href="ai-implementation.html">AI Implementation</a>
+            <a href="training-enablement.html">Training & Enablement</a>
+            <a href="staff-augmentation.html">Staff Augmentation</a>
+            <a href="ai-strategy.html">AI Strategy</a>
+            <a href="operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="../industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="../industries/insurance.html">Insurance Agencies</a>
+            <a href="../industries/professional-services.html">Professional Services</a>
+            <a href="../industries/law-firms.html">Law Firms</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="../about.html">About Us</a>
+            <a href="../free-ai-audit.html">Free AI Audit</a>
+            <a href="../resources.html">Resources</a>
+            <a href="../privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) { bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; bars[1].style.opacity = '0'; bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; }); }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

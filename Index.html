@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Execution Point Consulting — Your AI Partner for Regulated Industries</title>
+  <meta name="description" content="AI and automation consulting for regulated industries. Compliance-first implementation for real estate brokerages, insurance agencies, and professional services firms across the US." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+
+  <style>
+    /* ── HOMEPAGE HERO ── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 76px;
+      background-image: url('images/pexels-tara-winstead-8386440.jpg');
+      background-size: cover;
+      background-position: center 30%;
+    }
+
+    /* Dark overlay — heavy on left for text, light on right to let image + canvas breathe */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(3,14,27,0.88) 0%,
+        rgba(3,14,27,0.72) 42%,
+        rgba(3,14,27,0.28) 65%,
+        rgba(3,14,27,0.10) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Decorative grid lines */
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-grid-lines::before {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(201,168,76,0.12) 25%,
+        rgba(201,168,76,0.12) 75%,
+        transparent 100%
+      );
+    }
+    .hero-grid-lines::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 0;
+      width: 60px;
+      background: linear-gradient(to right, rgba(7,22,40,0.6), transparent);
+    }
+
+    /* Decorative dot accent */
+    .hero-dot {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+    .hero-dot-1 { top: 22%; left: 48%; }
+    .hero-dot-2 { top: 72%; left: 48%; }
+
+    /* ── HERO LEFT ── */
+    .hero-left {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px max(60px, calc((100vw - 1280px) / 2 + 60px));
+      max-width: none;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.6s var(--ease-out) 0.2s forwards;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 36px; height: 1px;
+      background: var(--gold);
+      opacity: 0.6;
+      display: block;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(44px, 4.8vw, 66px);
+      font-weight: 600;
+      line-height: 1.01;
+      letter-spacing: -0.03em;
+      color: var(--white);
+      margin-bottom: 22px;
+      opacity: 0;
+      transform: translateY(22px);
+      animation: fadeUp 0.8s var(--ease-out) 0.35s forwards;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--gold);
+      font-weight: 300;
+      display: block;
+    }
+
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.7vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.45;
+      margin-bottom: 36px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.7s var(--ease-out) 0.5s forwards;
+    }
+
+    .hero-divider {
+      width: 52px;
+      height: 2px;
+      background: linear-gradient(to right, var(--gold), var(--teal));
+      margin-bottom: 30px;
+      opacity: 0;
+      animation: fadeIn 0.6s var(--ease-out) 0.6s forwards;
+    }
+
+    .hero-body {
+      font-family: var(--sans);
+      font-size: clamp(15px, 1.3vw, 18px);
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.56);
+      max-width: 520px;
+      margin-bottom: 52px;
+      opacity: 0;
+      transform: translateY(14px);
+      animation: fadeUp 0.7s var(--ease-out) 0.65s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp 0.6s var(--ease-out) 0.8s forwards;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      background: var(--gold);
+      color: var(--navy);
+      transition: all 0.2s var(--ease-out);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-hero-primary::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.2);
+      transform: translateX(-100%);
+      transition: transform 0.3s var(--ease-out);
+    }
+    .btn-hero-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(201,168,76,0.5); }
+    .btn-hero-primary:hover::before { transform: translateX(0); }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    .btn-hero-ghost:hover { color: var(--white); }
+    .btn-hero-ghost .arrow {
+      font-size: 18px;
+      transition: transform 0.2s var(--ease-out);
+    }
+    .btn-hero-ghost:hover .arrow { transform: translateX(6px); }
+
+    /* ── HERO RIGHT — Canvas dominant, cards as bottom overlay ── */
+    .hero-right {
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    /* Canvas fills the entire right column */
+    #neuralCanvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* Cards float at the bottom of the canvas */
+    /* Cards: solid bg on mobile so text is always readable; desktop gets glass overlay */
+    .hero-right-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      width: 100%;
+      max-width: 100%;
+      gap: 0;
+      background: #071628;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    @media (min-width: 1101px) {
+      .hero-right-cards {
+        grid-column: 2;
+        grid-row: 1;
+        position: relative;
+        z-index: 3;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-self: center;
+        justify-self: center;
+        width: calc(100% - 96px);
+        border: 1px solid rgba(255,255,255,0.10);
+        background: rgba(3,12,24,0.58);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    }
+
+    .hero-card {
+      background: transparent;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 28px 20px;
+      text-align: center;
+      transition: background 0.2s;
+      border-right: 1px solid rgba(255,255,255,0.10);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 110px;
+    }
+    .hero-card:last-child {
+      border-right: none;
+    }
+    .hero-card:hover {
+      background: rgba(29,122,114,0.18);
+    }
+    .hero-card-num {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2vw, 28px);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+    }
+    .hero-card-label {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+    }
+
+
+    /* ── VISUAL BREAK (Photo / Abstract Panel) ── */
+    .visual-break {
+      position: relative;
+      height: 420px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse 70% 90% at 75% 50%, rgba(29,122,114,0.22) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 50% at 15% 25%, rgba(201,168,76,0.1) 0%, transparent 50%),
+        radial-gradient(ellipse 55% 55% at 95% 85%, rgba(42,173,162,0.12) 0%, transparent 50%),
+        var(--navy-deep);
+    }
+
+    /* Photo layer — swap URL for any image */
+    .visual-break-photo {
+      position: absolute;
+      inset: 0;
+      background-image:
+        url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.04);
+      transition: transform 9s ease;
+      filter: saturate(0.8) brightness(0.92);
+      z-index: 0;
+    }
+    .visual-break:hover .visual-break-photo { transform: scale(1.0); }
+
+    /* Gradient overlay — solid behind text on left, fades to transparent on right */
+    .visual-break-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(7,22,40,0.97) 0%,
+        rgba(7,22,40,0.95) 30%,
+        rgba(7,22,40,0.60) 55%,
+        rgba(7,22,40,0.12) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Subtle circuit-grid texture on the right half */
+    .visual-break-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(42,173,162,0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(42,173,162,0.07) 1px, transparent 1px);
+      background-size: 56px 56px;
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 55%);
+      mask-image: linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 55%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Content */
+    .visual-break-content {
+      position: relative;
+      z-index: 3;
+      max-width: 620px;
+    }
+
+    .visual-break-eyebrow {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      opacity: 0.8;
+    }
+    .visual-break-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--gold);
+      display: block;
+    }
+
+    .visual-break-quote {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.4vw, 40px);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.42;
+      border-left: 3px solid var(--gold);
+      padding-left: 32px;
+      margin: 0 0 28px;
+    }
+    .visual-break-quote strong {
+      font-weight: 600;
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .visual-break-attr {
+      padding-left: 32px;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .visual-break { height: 320px; }
+      .visual-break-quote { font-size: clamp(20px, 4.5vw, 28px); }
+    }
+
+    .hero-stat {
+      background: rgba(7,22,40,0.6);
+      padding: 36px 30px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: background 0.25s var(--ease-out), padding-left 0.2s;
+      border-left: 3px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-stat::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: rgba(255,255,255,0.04);
+    }
+    .hero-stat:hover { background: rgba(29,122,114,0.12); border-left-color: var(--gold); padding-left: 36px; }
+    .hero-stat:nth-child(1) { animation: fadeUp 0.6s var(--ease-out) 0.9s forwards; }
+    .hero-stat:nth-child(2) { animation: fadeUp 0.6s var(--ease-out) 1.0s forwards; }
+    .hero-stat:nth-child(3) { animation: fadeUp 0.6s var(--ease-out) 1.1s forwards; }
+    .hero-stat:nth-child(4) { animation: fadeUp 0.6s var(--ease-out) 1.2s forwards; }
+
+    .stat-num {
+      font-family: var(--serif);
+      font-size: clamp(36px, 3.5vw, 58px);
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.38);
+      line-height: 1.55;
+    }
+
+    /* ── HOMEPAGE SERVICES PREVIEW ── */
+    .services-preview {
+      background: var(--off-white);
+      padding: 96px 0 112px;
+      position: relative;
+    }
+
+    .services-grid-home {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* ── HOMEPAGE INDUSTRIES PREVIEW ── */
+    .industries-preview {
+      background: var(--navy);
+      padding: 96px 0 112px;
+      position: relative;
+      overflow: hidden;
+    }
+    .industries-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 80% 50%, rgba(42,173,162,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .industries-grid-home {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* Industry card — dark variant for dark section */
+    .card-industry-dark {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-top: 3px solid rgba(42,173,162,0.3);
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s var(--ease-out), background 0.3s, border-top-color 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Background image layer — swap URL per card below */
+    .card-industry-dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.07;
+      transition: opacity 0.35s;
+      z-index: 0;
+    }
+    .card-industry-dark:hover::before { opacity: 0.14; }
+    .card-industry-dark > * { position: relative; z-index: 1; }
+    .card-industry-dark:hover {
+      background: rgba(42,173,162,0.08);
+      border-top-color: var(--gold);
+      transform: translateY(-6px);
+    }
+
+    .card-real-estate::before { background-image: url('images/sean-pollock-PhYq704ffdA-unsplash.jpg'); }
+
+    .card-insurance::before { background-image: url('images/campaign-creators-gMsnXqILjp4-unsplash.jpg'); }
+
+    .card-professional::before { background-image: url('images/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg'); }
+
+    /* SVG icon container for dark cards */
+    .card-industry-dark .icard-icon {
+      width: 56px;
+      height: 56px;
+      background: rgba(42,173,162,0.1);
+      border: 1px solid rgba(42,173,162,0.22);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      transition: background 0.25s, border-color 0.25s, box-shadow 0.25s;
+      flex-shrink: 0;
+    }
+    .card-industry-dark .icard-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--teal-lt);
+      fill: none;
+      stroke-width: 1.6;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: stroke 0.25s;
+    }
+    .card-industry-dark:hover .icard-icon {
+      background: rgba(42,173,162,0.18);
+      border-color: rgba(42,173,162,0.45);
+      box-shadow: 0 0 28px rgba(42,173,162,0.22);
+    }
+    .card-industry-dark:hover .icard-icon svg { stroke: var(--teal-lt); }
+    .card-industry-dark .icard-title {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2vw, 28px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .card-industry-dark .icard-desc {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.72;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+    .card-industry-dark .icard-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .icard-tag {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      background: rgba(42,173,162,0.1);
+      border: 1px solid rgba(42,173,162,0.2);
+      padding: 5px 10px;
+    }
+    .card-industry-dark .icard-link {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: gap 0.2s var(--ease-out);
+    }
+    .card-industry-dark .icard-link:hover { gap: 14px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      /* Keep 2-column: text left, stat cards right (fills empty canvas space) */
+      .hero { grid-template-columns: 1fr 1fr; min-height: 100vh; min-height: 100svh; padding-bottom: 0; }
+      .hero-right { display: none; }
+      .hero-left { padding: 120px 32px 80px 40px; max-width: 100%; grid-column: 1; grid-row: 1; }
+      .hero-right-cards {
+        grid-column: 2;
+        grid-row: 1;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: center;
+        position: relative;
+        z-index: 3;
+        background: rgba(3,12,24,0.52);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: none;
+        border-left: 1px solid rgba(255,255,255,0.10);
+        margin: 60px 24px 60px 0;
+      }
+      .services-grid-home { grid-template-columns: repeat(2, 1fr); }
+      .industries-grid-home { grid-template-columns: repeat(2, 1fr); }
+      .visual-break { height: 340px; }
+    }
+
+    @media (max-width: 768px) {
+      .hero { min-height: 100vh; min-height: 100svh; }
+      .hero::before {
+        background: linear-gradient(
+          180deg,
+          rgba(3,14,27,0.92) 0%,
+          rgba(3,14,27,0.82) 60%,
+          rgba(3,14,27,0.75) 100%
+        );
+      }
+      .hero-left { padding: 100px 24px 100px 24px; }
+      .hero-eyebrow { font-size: 9px; letter-spacing: 0.14em; margin-bottom: 20px; }
+      .hero-headline { font-size: clamp(28px, 7vw, 44px); margin-bottom: 16px; }
+      .hero-sub { color: rgba(255,255,255,0.72); font-size: clamp(15px, 3.8vw, 18px); margin-bottom: 16px; }
+      .hero-divider { display: none; }
+      .hero-body { color: rgba(255,255,255,0.82); font-size: 14px; line-height: 1.65; margin-bottom: 32px; max-width: 100%; }
+      .hero-right-cards { grid-template-columns: repeat(2, 1fr); overflow: hidden; margin: 40px 16px 40px 0; }
+      .hero-card { padding: 18px 12px; min-width: 0; }
+      .hero-card:nth-child(2n) { border-right: none; }
+      .hero-card:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.10); }
+      .hero-card-label { font-size: 10px; line-height: 1.5; }
+      .hero-card-num { font-size: 22px; margin-bottom: 6px; }
+      .hero-actions { flex-direction: column; align-items: stretch; gap: 14px; }
+      .btn-hero-primary { text-align: center; justify-content: center; padding: 16px 24px; font-size: 11px; }
+      .btn-hero-ghost { justify-content: center; }
+      .services-preview { padding: 64px 0 72px; }
+      .services-grid-home { grid-template-columns: 1fr; gap: 16px; }
+      .industries-preview { padding: 64px 0 72px; }
+      .industries-grid-home { grid-template-columns: 1fr; gap: 16px; }
+      .card-industry-dark { padding: 28px 24px; }
+      .visual-break { height: 300px; }
+      .visual-break-quote { font-size: clamp(20px, 5vw, 26px) !important; padding-left: 20px; }
+      .visual-break-eyebrow { font-size: 9px; }
+      .visual-break-attr { padding-left: 20px; font-size: 12px; }
+      .visual-break-content { max-width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      /* Stack to single column on very small phones */
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 100px 20px 48px 20px; grid-column: 1; grid-row: 1; }
+      .hero-headline { font-size: clamp(24px, 6.5vw, 36px); }
+      .hero-right-cards {
+        grid-column: 1; grid-row: 2;
+        grid-template-columns: repeat(2, 1fr);
+        align-self: unset;
+        margin: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        background: #071628;
+      }
+      .hero-card { padding: 18px 14px; }
+      .hero-card-num { font-size: 24px; }
+      .hero-card-label { font-size: 10px; }
+      .visual-break { height: 260px; }
+      .services-preview { padding: 52px 0 60px; }
+      .industries-preview { padding: 52px 0 60px; }
+    }
+
+    /* ── MEGA-MENU ── */
+    .nav-item-dropdown { position: relative; }
+
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(3,14,27,0.98);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-top: 2px solid var(--teal);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 32px 36px;
+      padding-top: 44px;
+      display: none;
+      gap: 48px;
+      min-width: 560px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+    .mega-menu::before {
+      content: '';
+      position: absolute;
+      top: -12px;
+      left: 0;
+      right: 0;
+      height: 12px;
+    }
+    .mega-menu.two-col { display: none; grid-template-columns: 1fr 1fr; }
+    .mega-menu.three-col { display: none; grid-template-columns: 1fr 1fr 1fr; }
+    .nav-item-dropdown:hover .mega-menu { display: grid; }
+
+    .mega-col-title {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .mega-link {
+      display: block;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.62);
+      padding: 7px 0;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .mega-link:hover { color: var(--white); }
+
+    /* Mobile mega nav */
+    .mobile-mega-group { margin-top: 8px; }
+    .mobile-mega-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      padding: 12px 0 6px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: block;
+    }
+    .mobile-mega-link {
+      display: block;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      padding: 8px 0 8px 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI & Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="services/ai-implementation.html" class="mega-link">AI & Automation Implementation</a>
+              <a href="services/process-documentation.html" class="mega-link">Process Documentation & SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="services/training-enablement.html" class="mega-link">AI Training & Enablement</a>
+              <a href="services/staff-augmentation.html" class="mega-link">Staff Augmentation</a>
+              <a href="services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="industries/professional-services.html" class="mega-link">Professional Services & Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+      <a href="free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="services/ai-implementation.html" class="mobile-mega-link">AI & Automation Implementation</a>
+      <a href="services/process-documentation.html" class="mobile-mega-link">Process Documentation & SOPs</a>
+      <a href="services/training-enablement.html" class="mobile-mega-link">AI Training & Enablement</a>
+      <a href="services/staff-augmentation.html" class="mobile-mega-link">Staff Augmentation</a>
+      <a href="services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="industries/professional-services.html" class="mobile-mega-link">Professional Services & Law Firms</a>
+    </div>
+    <a href="about.html">About Us</a>
+    <a href="free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit →</a>
+  </div>
+
+  <main>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero">
+      <div class="hero-grid-lines"></div>
+      <div class="hero-dot hero-dot-1"></div>
+      <div class="hero-dot hero-dot-2"></div>
+
+      <div class="hero-left">
+        <h1 class="hero-headline">
+          Your AI Partner for
+          <em>Regulated Industries.</em>
+        </h1>
+
+        <p class="hero-sub">Intelligent systems built compliance-first,<br>so you can adopt AI with confidence, not risk.</p>
+
+        <div class="hero-divider"></div>
+
+        <p class="hero-body">We help small and mid-sized businesses in real estate, insurance, and professional services stop running on human effort alone — and start running on AI systems that work 24/7, reduce errors, cut costs, and scale without proportional headcount growth.</p>
+
+        <div class="hero-actions">
+          <a href="free-ai-audit.html" class="btn-hero-primary">Get Your Free AI Audit</a>
+          <a href="what-we-do.html" class="btn-hero-ghost">See How It Works <span class="arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <canvas id="neuralCanvas"></canvas>
+      </div>
+      <div class="hero-right-cards">
+        <div class="hero-card">
+          <div class="hero-card-num">30–40%</div>
+          <div class="hero-card-label">of SMB staff time lost to manual, automatable tasks</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">$47B</div>
+          <div class="hero-card-label">projected AI agents market by 2030</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">90%+</div>
+          <div class="hero-card-label">of AI solutions built for enterprise — not SMBs</div>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-num">48hrs</div>
+          <div class="hero-card-label">delivery time for your free AI audit report</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ TRUST BAR ═══ -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        Compliance-First Methodology
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        Bilingual English / Spanish
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        Regulated Industry Specialists
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        Serving Businesses Nationwide
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+        Platform-Agnostic Approach
+      </div>
+    </div>
+
+    <!-- ═══ SERVICES PREVIEW ═══ -->
+    <section class="services-preview">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Our Services</div>
+          <h2 class="section-heading" style="font-size: clamp(36px, 4vw, 56px);">
+            From first automation<br>to <em>full transformation.</em>
+          </h2>
+        </div>
+
+        <div class="services-grid-home">
+
+          <div class="card reveal">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><polyline points="9 12 11 14 15 10"/></svg>
+              </div>
+              <span class="card-tag">Readiness</span>
+            </div>
+            <h3 class="card-title">AI Readiness Suite</h3>
+            <p class="card-body">Three assessments covering your operations, data, and compliance exposure. You receive a prioritized action plan within 48 hours — yours to keep regardless of whether you engage further.</p>
+            <a href="services/ai-readiness-suite.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 6h8M8 10h4M8 14h2"/><circle cx="17" cy="15" r="3"/><path d="M19.5 17.5l1.5 1.5"/></svg>
+              </div>
+              <span class="card-tag">Build</span>
+            </div>
+            <h3 class="card-title">AI & Automation Implementation</h3>
+            <p class="card-body">We build AI agents, process automations, and system integrations. Platform-agnostic, compliance-reviewed, and fully documented before anything goes live.</p>
+            <a href="services/ai-implementation.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              </div>
+              <span class="card-tag">Strategy</span>
+            </div>
+            <h3 class="card-title">AI Strategy Consulting</h3>
+            <p class="card-body">For clients who want the full strategic picture before committing to implementation. A prioritized 12–24 month roadmap your leadership can execute against.</p>
+            <a href="services/ai-strategy.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-1">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="1"/><path d="M12 6v4"/><path d="M8 10h8"/><path d="M6 10v2a2 2 0 0 0 2 2h2v2"/><path d="M18 10v2a2 2 0 0 1-2 2h-2v2"/><circle cx="10" cy="16" r="1"/><circle cx="14" cy="16" r="1"/></svg>
+              </div>
+              <span class="card-tag">SOPs</span>
+            </div>
+            <h3 class="card-title">Process Documentation & SOPs</h3>
+            <p class="card-body">We map your current workflows, document SOPs, and tag every automation opportunity. The foundation all AI work is built on.</p>
+            <a href="services/process-documentation.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-2">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+              <span class="card-tag">Training</span>
+            </div>
+            <h3 class="card-title">AI Training & Enablement</h3>
+            <p class="card-body">Role-specific training, recorded walkthroughs, and AI literacy workshops. We make your team genuine owners of what we build.</p>
+            <a href="services/training-enablement.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+          <div class="card reveal reveal-delay-3">
+            <div class="card-header">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <span class="card-tag">Talent</span>
+            </div>
+            <h3 class="card-title">Staff Augmentation</h3>
+            <p class="card-body">Vetted Latin American AI developers and automation specialists. US time zone aligned, evaluated on real projects, not just resumes.</p>
+            <a href="services/staff-augmentation.html" class="card-link">Learn More <span>→</span></a>
+          </div>
+
+        </div>
+
+        <div style="margin-top: 40px; text-align: center;" class="reveal">
+          <a href="what-we-do.html" class="card-link" style="display:inline-flex; font-size:12px; color: var(--teal);">
+            View All 7 Services including the AI Operations Retainer <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ VISUAL BREAK ═══ -->
+    <!-- Sits between off-white services and dark industries — both dark sides connect cleanly -->
+    <!-- To swap the photo: replace the background-image URL inside .visual-break-photo in the <style> block above -->
+    <div class="visual-break">
+      <div class="visual-break-photo"></div>
+      <div class="visual-break-overlay"></div>
+      <div class="visual-break-grid"></div>
+      <div class="container">
+        <div class="visual-break-content reveal">
+          <div class="visual-break-eyebrow">The Execution Point Difference</div>
+          <blockquote class="visual-break-quote">
+            AI doesn't replace your team.<br>
+            It multiplies <strong>what they can do</strong>.
+          </blockquote>
+          <p class="visual-break-attr">Compliance-first AI systems built for regulated industries — real estate, insurance, and professional services.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ INDUSTRIES PREVIEW ═══ -->
+    <section class="industries-preview">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label on-dark">Industries We Serve</div>
+          <h2 class="section-heading on-dark" style="font-size: clamp(36px, 4vw, 56px);">
+            Built for regulated industries.<br><em>Compliance isn't optional.</em>
+          </h2>
+        </div>
+
+        <div class="industries-grid-home">
+
+          <div class="card-industry-dark card-real-estate reveal">
+            <div class="icard-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3 class="icard-title">Real Estate Brokerages</h3>
+            <p class="icard-desc">Lead qualification, transaction coordination, compliance tracking, and agent onboarding — all the repeatable work that keeps your team from focusing on what closes deals.</p>
+            <div class="icard-tags">
+              <span class="icard-tag">Lead Routing</span>
+              <span class="icard-tag">Transaction Automation</span>
+              <span class="icard-tag">License Compliance</span>
+              <span class="icard-tag">Agent Onboarding</span>
+            </div>
+            <a href="industries/real-estate.html" class="icard-link">Learn More →</a>
+          </div>
+
+          <div class="card-industry-dark card-insurance reveal reveal-delay-1">
+            <div class="icard-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3 class="icard-title">Insurance Agencies</h3>
+            <p class="icard-desc">Policy renewals, claims intake, carrier submissions, and compliance documentation. We automate the high-volume, rule-bound work that defines insurance operations.</p>
+            <div class="icard-tags">
+              <span class="icard-tag">Renewal Automation</span>
+              <span class="icard-tag">Claims Processing</span>
+              <span class="icard-tag">Carrier Submissions</span>
+              <span class="icard-tag">Compliance Docs</span>
+            </div>
+            <a href="industries/insurance.html" class="icard-link">Learn More →</a>
+          </div>
+
+          <div class="card-industry-dark card-professional reveal reveal-delay-2">
+            <div class="icard-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="12" x2="12" y2="16"/></svg>
+            </div>
+            <h3 class="icard-title">Professional Services & Law Firms</h3>
+            <p class="icard-desc">Proposal generation, client intake, billing workflows, and matter management. We remove administrative overhead so your professionals spend more time on billable work.</p>
+            <div class="icard-tags">
+              <span class="icard-tag">Client Intake</span>
+              <span class="icard-tag">Proposal Automation</span>
+              <span class="icard-tag">Billing Workflows</span>
+              <span class="icard-tag">Matter Management</span>
+            </div>
+            <a href="industries/professional-services.html" class="icard-link">Learn More →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ AUDIT CTA ═══ -->
+    <section class="audit-cta">
+      <div class="container">
+        <div class="audit-cta-inner">
+          <div class="reveal">
+            <p class="audit-eyebrow">Where to Start</p>
+            <h2 class="audit-headline">Ready to See What AI<br>Can Do for Your Business?</h2>
+            <p class="audit-body">Start with a free AI and automation audit. In 60–90 minutes we walk your operations, identify every opportunity, quantify the ROI, and deliver a professional report within 48 hours. No cost. No obligation. You keep the report either way.</p>
+          </div>
+          <div class="audit-cta-right reveal reveal-delay-2">
+            <a href="free-ai-audit.html" class="btn-audit">Book Your Free AI Audit</a>
+            <p class="audit-hint">Schedule via Calendly · Takes 2 minutes<br>Bilingual consultations available (EN/ES)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="services/process-documentation.html">Process Documentation</a>
+            <a href="services/ai-implementation.html">AI Implementation</a>
+            <a href="services/training-enablement.html">Training &amp; Enablement</a>
+            <a href="services/staff-augmentation.html">Staff Augmentation</a>
+            <a href="services/ai-strategy.html">AI Strategy</a>
+            <a href="services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="industries/insurance.html">Insurance Agencies</a>
+            <a href="industries/professional-services.html">Professional Services</a>
+            <a href="industries/law-firms.html">Law Firms</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="free-ai-audit.html">Free AI Audit</a>
+            <a href="resources.html">Resources</a>
+            <a href="privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // ── Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) {
+        bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        bars[1].style.opacity = '0';
+        bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; });
+      }
+    });
+
+    // ── Neural Network Canvas Animation
+    function initNeural() {
+      const canvas = document.getElementById('neuralCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let W, H;
+
+      const resize = () => {
+        W = canvas.width = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      };
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      const COUNT = 44;
+      const MAX_DIST = 185;
+
+      const nodes = Array.from({ length: COUNT }, () => ({
+        x: Math.random(),
+        y: Math.random(),
+        vx: (Math.random() - 0.5) * 0.00014,
+        vy: (Math.random() - 0.5) * 0.00014,
+        r: Math.random() * 2.2 + 0.8,
+        phase: Math.random() * Math.PI * 2,
+        gold: Math.random() < 0.16,
+        speed: 0.008 + Math.random() * 0.01
+      }));
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+
+        nodes.forEach(n => {
+          n.phase += n.speed;
+          n.x += n.vx;
+          n.y += n.vy;
+          if (n.x < 0 || n.x > 1) n.vx *= -1;
+          if (n.y < 0 || n.y > 1) n.vy *= -1;
+        });
+
+        // Connections
+        for (let i = 0; i < COUNT; i++) {
+          for (let j = i + 1; j < COUNT; j++) {
+            const a = nodes[i], b = nodes[j];
+            const dx = (a.x - b.x) * W;
+            const dy = (a.y - b.y) * H;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < MAX_DIST) {
+              const alpha = (1 - dist / MAX_DIST) * 0.32;
+              const useGold = (a.gold || b.gold) && (i * j) % 5 === 0;
+              ctx.beginPath();
+              ctx.moveTo(a.x * W, a.y * H);
+              ctx.lineTo(b.x * W, b.y * H);
+              ctx.strokeStyle = useGold
+                ? `rgba(201,168,76,${alpha * 0.9})`
+                : `rgba(42,173,162,${alpha})`;
+              ctx.lineWidth = 0.75;
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Nodes
+        nodes.forEach(n => {
+          const px = n.x * W, py = n.y * H;
+          const pulse = 0.5 + Math.sin(n.phase) * 0.5;
+          const r = n.r * (0.85 + pulse * 0.32);
+          const alpha = 0.38 + pulse * 0.52;
+          const col = n.gold ? '201,168,76' : '42,173,162';
+
+          // Glow halo
+          const grd = ctx.createRadialGradient(px, py, 0, px, py, r * 6);
+          grd.addColorStop(0, `rgba(${col},${alpha * 0.55})`);
+          grd.addColorStop(0.4, `rgba(${col},${alpha * 0.18})`);
+          grd.addColorStop(1, `rgba(${col},0)`);
+          ctx.beginPath();
+          ctx.arc(px, py, r * 6, 0, Math.PI * 2);
+          ctx.fillStyle = grd;
+          ctx.fill();
+
+          // Core dot
+          ctx.beginPath();
+          ctx.arc(px, py, r, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(${col},${Math.min(alpha + 0.35, 1)})`;
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      }
+
+      requestAnimationFrame(draw);
+    }
+    initNeural();
+
+    // ── Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
