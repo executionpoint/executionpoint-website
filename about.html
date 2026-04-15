@@ -18,9 +18,11 @@
   <meta name="twitter:title" content="About Us" />
   <meta name="twitter:description" content="Founded by operators with 15+ years of enterprise experience. Execution Point Consulting delivers AI systems built compliance-first, backed by a vetted Latin American engineering network." />
   <meta name="twitter:image" content="https://executionpointconsulting.com/og-image.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@300;400;500&display=swap"></noscript>
+  <link rel="preload" as="image" href="/images/ricardo-gomez-angel-1mUBcA4X8js-unsplash.webp" type="image/webp">
   <link rel="stylesheet" href="shared.css" />
   <style>
     /* ── 1. MISSION BANNER ── */
@@ -514,7 +516,10 @@
 
     <!-- ═══ 1. MISSION BANNER ═══ -->
     <section class="mission-banner">
-      <img src="images/ricardo-gomez-angel-1mUBcA4X8js-unsplash.jpg" alt="Abstract architectural detail representing precision and purposeful design" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;" />
+      <picture style="display:contents">
+  <source srcset="images/ricardo-gomez-angel-1mUBcA4X8js-unsplash.webp" type="image/webp">
+  <img src="images/ricardo-gomez-angel-1mUBcA4X8js-unsplash.jpg" alt="Abstract architectural detail representing precision and purposeful design" width="8688" height="5792" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;">
+</picture>
       <div class="mission-banner-grid"></div>
       <div class="mission-banner-glow"></div>
       <div class="container">
@@ -645,7 +650,10 @@
 
           <div class="founder-photo-card reveal">
             <div class="founder-photo-placeholder">
-              <img src="images/veronica.jpg" alt="Veronica Grunberg Kogan — Founder & CEO, Execution Point Consulting" />
+              <picture style="display:contents">
+  <source srcset="images/veronica.webp" type="image/webp">
+  <img src="images/veronica.jpg" alt="Veronica Grunberg Kogan — Founder & CEO, Execution Point Consulting" width="800" height="800" loading="lazy">
+</picture>
             </div>
             <div class="founder-card-info">
               <div class="founder-name">Veronica Grunberg Kogan</div>
