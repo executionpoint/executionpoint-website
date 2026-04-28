@@ -1,0 +1,18 @@
+# Redirect .html URLs to clean trailing-slash paths (301 permanent)
+
+/about.html                             /about/                             301
+/what-we-do.html                        /what-we-do/                        301
+/free-ai-audit.html                     /free-ai-audit/                     301
+/book.html                              /book/                              301
+/industries.html                        /industries/                        301
+/industries/real-estate.html            /industries/real-estate/            301
+/industries/insurance.html              /industries/insurance/              301
+/industries/professional-services.html  /industries/professional-services/  301
+/services/ai-readiness-suite.html       /services/ai-readiness-suite/       301
+/services/ai-strategy.html             /services/ai-strategy/              301
+/services/ai-implementation.html        /services/ai-implementation/        301
+/services/process-documentation.html    /services/process-documentation/    301
+/services/training-enablement.html      /services/training-enablement/      301
+/services/staff-augmentation.html       /services/staff-augmentation/       301
+/services/operations-retainer.html      /services/operations-retainer/      301
+/privacy.html                           /privacy/                           301
