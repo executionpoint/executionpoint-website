@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /book
 Sitemap: https://www.executionpointconsulting.com/sitemap.xml
