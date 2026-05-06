@@ -26,6 +26,10 @@
   <link rel="stylesheet" href="shared.css" />
 
   <style>
+    .webp .hero {
+      background-image: url('images/pexels-tara-winstead-8386440.webp');
+    }
+
     /* ── HOMEPAGE HERO ── */
     .hero {
       min-height: 100vh;
@@ -34,7 +38,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding-top: 76px;
-      background-image: url('images/pexels-tara-winstead-8386440.webp');
+      background-image: url('images/pexels-tara-winstead-8386440.jpg');
       background-size: cover;
       background-position: center 30%;
     }
@@ -333,12 +337,16 @@
         var(--navy-deep);
     }
 
+    .webp .visual-break-photo {
+      background-image: url('images/pawel-czerwinski-prMn9KINLtI-unsplash.webp');
+    }
+
     /* Photo layer — swap URL for any image */
     .visual-break-photo {
       position: absolute;
       inset: 0;
       background-image:
-        url('images/pawel-czerwinski-prMn9KINLtI-unsplash.webp');
+        url('images/pawel-czerwinski-prMn9KINLtI-unsplash.jpg');
       background-size: cover;
       background-position: center;
       transform: scale(1.04);
@@ -538,11 +546,11 @@
       transform: translateY(-6px);
     }
 
-    .card-real-estate::before { background-image: url('images/sean-pollock-PhYq704ffdA-unsplash.webp'); }
+    .webp .card-real-estate::before { background-image: url('images/sean-pollock-PhYq704ffdA-unsplash.webp'); }
+    .card-real-estate::before { background-image: url('images/sean-pollock-PhYq704ffdA-unsplash.jpg'); }
 
-    .card-insurance::before { background-image: url('images/campaign-creators-gMsnXqILjp4-unsplash.jpg'); }
-
-    .card-professional::before { background-image: url('images/tingey-injury-law-firm-veNb0DDegzE-unsplash.webp'); }
+    .webp .card-professional::before { background-image: url('images/tingey-injury-law-firm-veNb0DDegzE-unsplash.webp'); }
+    .card-professional::before { background-image: url('images/tingey-injury-law-firm-veNb0DDegzE-unsplash.jpg'); }
 
     /* SVG icon container for dark cards */
     .card-industry-dark .icard-icon {
@@ -855,6 +863,15 @@
   ]
 }
 </script>
+  <script>
+  (function(){
+    var webP = new Image();
+    webP.onload = webP.onerror = function(){
+      if(webP.height === 2) document.documentElement.classList.add('webp');
+    };
+    webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+  })();
+  </script>
 </head>
 <body>
 
