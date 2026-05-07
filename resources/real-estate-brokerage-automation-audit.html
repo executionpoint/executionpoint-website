@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Real Estate Brokerage Workflows to Automate First | Execution Point Consulting</title>
+  <meta name="description" content="Before recommending any AI tool, we audit the workflows. Here are the five areas where independent real estate brokerages consistently lose the most time and what automation looks like in each one." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://executionpointconsulting.com/resources/real-estate-brokerage-automation-audit" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Execution Point Consulting" />
+  <meta property="og:title" content="5 Real Estate Brokerage Workflows to Automate First" />
+  <meta property="og:description" content="A practical guide from the field -- not a vendor pitch. Five workflows, five automation patterns, one clear next step." />
+  <meta property="og:url" content="https://executionpointconsulting.com/resources/real-estate-brokerage-automation-audit" />
+  <meta property="og:image" content="https://executionpointconsulting.com/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="5 Real Estate Brokerage Workflows to Automate First" />
+  <meta name="twitter:description" content="A practical guide from the field -- not a vendor pitch. Five workflows, five automation patterns, one clear next step." />
+  <meta name="twitter:image" content="https://executionpointconsulting.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="../shared.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "5 Workflows We Look at First When Auditing a Real Estate Brokerage for Automation",
+  "description": "Before recommending any AI tool, we audit the workflows. Here are the five areas where independent real estate brokerages consistently lose the most time.",
+  "author": {
+    "@type": "Person",
+    "name": "Veronica Grunberg Kogan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Execution Point Consulting",
+    "url": "https://executionpointconsulting.com"
+  },
+  "url": "https://executionpointconsulting.com/resources/real-estate-brokerage-automation-audit",
+  "datePublished": "2026-05-06",
+  "dateModified": "2026-05-06"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://executionpointconsulting.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://executionpointconsulting.com/resources"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "5 Real Estate Brokerage Workflows to Automate First",
+      "item": "https://executionpointconsulting.com/resources/real-estate-brokerage-automation-audit"
+    }
+  ]
+}
+</script>
+
+  <style>
+    /* ── ARTICLE PAGE ── */
+
+    /* Article header section */
+    .article-header {
+      background: var(--navy);
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 80% 50%, rgba(42,173,162,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-header .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.40);
+      margin-bottom: 24px;
+    }
+    .article-breadcrumb a {
+      color: rgba(255,255,255,0.40);
+      transition: color 0.15s;
+    }
+    .article-breadcrumb a:hover { color: var(--teal-lt); }
+    .article-breadcrumb-sep { color: rgba(255,255,255,0.20); }
+
+    .article-header-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .article-header-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.8vw, 54px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+
+    .article-header-sub {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.6vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.50;
+      margin-bottom: 28px;
+    }
+
+    .article-byline {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.40);
+      letter-spacing: 0.02em;
+    }
+    .article-byline span {
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body-section {
+      background: var(--off-white);
+      padding: 80px 0 96px;
+    }
+
+    .article-body-section .container {
+      max-width: 720px;
+    }
+
+    .article-body p {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.82;
+      margin-bottom: 28px;
+    }
+
+    .article-body hr {
+      border: none;
+      border-top: 1px solid rgba(11,31,58,0.10);
+      margin: 48px 0;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.2vw, 34px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-top: 56px;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
+    }
+    .article-body h2:first-child { margin-top: 0; }
+
+    /* ── ARTICLE CTA ── */
+    .article-cta-section {
+      background: var(--navy);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 80% at 85% 50%, rgba(42,173,162,0.09) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .article-cta-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 2.8vw, 42px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .article-cta-body {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .btn-article-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      background: var(--gold);
+      color: var(--navy);
+      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+    }
+    .btn-article-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,168,76,0.45);
+    }
+
+    /* Back to resources link */
+    .article-back {
+      background: var(--off-white);
+      padding: 32px 0 48px;
+      border-top: 1px solid rgba(11,31,58,0.08);
+    }
+    .article-back .container {
+      max-width: 720px;
+    }
+    .article-back-link {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      transition: gap 0.2s var(--ease-out), color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .article-back-link:hover {
+      color: var(--navy);
+      gap: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .article-header { padding: 100px 0 60px; }
+      .article-header-title { font-size: clamp(26px, 6vw, 38px); }
+      .article-header-sub { font-size: clamp(15px, 3.5vw, 18px); }
+      .article-body-section { padding: 56px 0 64px; }
+      .article-body p { font-size: 16px; }
+      .article-body h2 { font-size: clamp(22px, 4.5vw, 28px); margin-top: 40px; }
+      .article-cta-section { padding: 60px 0; }
+      .article-cta-title { font-size: clamp(24px, 5.5vw, 34px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="../what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="../services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="../services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="../services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="../services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="../services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="../services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="../industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="../industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="../industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="../industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../about.html">About Us</a></li>
+      </ul>
+      <a href="../free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="../what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="../services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="../services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="../services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="../services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="../services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="../services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="../industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="../industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="../industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="../industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="../resources.html">Resources</a>
+    <a href="../about.html">About Us</a>
+    <a href="../free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <!-- ═══ ARTICLE HEADER ═══ -->
+    <section class="article-header">
+      <div class="container">
+        <div class="article-breadcrumb">
+          <a href="/resources">Resources</a>
+          <span class="article-breadcrumb-sep">/</span>
+          <span>Real Estate</span>
+        </div>
+        <span class="article-header-tag">Real Estate</span>
+        <h1 class="article-header-title">5 Workflows We Look at First When Auditing a Real Estate Brokerage for Automation</h1>
+        <p class="article-header-sub">Before recommending any tool, we map the workflows. Here are the five areas where independent brokerages consistently lose the most time -- and what automation actually looks like in each one.</p>
+        <p class="article-byline">By <span>Veronica Grunberg Kogan</span> &middot; Execution Point Consulting &middot; May 2026</p>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLE BODY ═══ -->
+    <section class="article-body-section">
+      <div class="container">
+        <div class="article-body">
+
+          <p>When a real estate brokerage contacts us for a free AI Audit, they usually come in with one of two situations. Either they have already tried a tool that did not deliver, or they know something is broken but cannot pinpoint exactly where the time is going.</p>
+
+          <p>The audit answers that question before we recommend anything.</p>
+
+          <p>After walking through dozens of small business operations across industries, certain patterns repeat. In real estate brokerages specifically, five workflow areas surface almost every time. These are not the flashiest automation opportunities. They are the ones where manual work is creating the most friction, the most compliance risk, and the most lost revenue.</p>
+
+          <p>Here is what we look at first.</p>
+
+          <hr>
+
+          <h2>1. Lead Response and Routing</h2>
+
+          <p>Speed is everything in lead response. Research indicates that responding to a lead within five minutes increases the chance of securing a meaningful conversation by 100 times. Yet in most independent brokerages, leads arriving from portals, referrals, and the website land in different places and get routed manually.</p>
+
+          <p>During an audit we map exactly how a lead travels from first contact to agent assignment. We look at how many systems it touches, how long each handoff takes, and where leads are falling out of the process entirely. In most cases the bottleneck is not a people problem. It is a systems problem -- no single routing rule, no automatic assignment, no follow-up trigger.</p>
+
+          <p>What automation looks like here: a lead comes in from any source, gets scored and assigned to the right agent instantly, and triggers an automatic follow-up sequence without anyone touching a spreadsheet.</p>
+
+          <hr>
+
+          <h2>2. Transaction Coordination</h2>
+
+          <p>Real estate transactions generate hundreds of pages of paperwork per deal including contracts, disclosures, verification materials, amendments, and compliance records. Every transaction follows the same sequence of steps. Yet most brokerages track this manually in spreadsheets, shared inboxes, or someone's memory.</p>
+
+          <p>We audit the full transaction lifecycle from contract to close. We count the touchpoints, identify which steps are purely mechanical, and flag every point where a missed action creates downstream risk. Teams that implement automated deadline tracking and document management consistently cut coordinator time per file and reduce missed reminders to near zero.</p>
+
+          <p>What automation looks like here: automated checklists, deadline reminders, document request triggers, and status updates. The coordinator still runs the process. The system handles the tracking.</p>
+
+          <hr>
+
+          <h2>3. Compliance and License Tracking</h2>
+
+          <p>License renewal dates and mandatory disclosure requirements are compliance risks that most brokerages manage reactively. Someone remembers, or they do not.</p>
+
+          <p>During the audit we ask one question: if an agent's license expired today, how long before anyone noticed? In most small brokerages, the honest answer is days or weeks.</p>
+
+          <p>We also look at how disclosures are tracked and documented. A missing disclosure or an undocumented client interaction is an E&amp;O claim waiting to happen. Automation does not make compliance decisions. That remains a human responsibility. What it does is ensure nothing slips through because someone forgot to check a spreadsheet.</p>
+
+          <p>What automation looks like here: expiration alerts, renewal reminders, and automatic logging of compliance actions so the broker-in-charge has a clear audit trail at all times.</p>
+
+          <hr>
+
+          <h2>4. Agent Onboarding</h2>
+
+          <p>Every new agent goes through the same process. MLS access, compliance documentation, system orientation, follow-up on outstanding items. In most brokerages this is rebuilt manually every time a new agent joins, which means it is inconsistent, slow, and dependent on whoever happens to be managing it that week.</p>
+
+          <p>We audit onboarding by asking to see the last three onboarding sequences. If the answer is that there is no real sequence, that is the finding. A new agent who takes three weeks to become productive instead of one week is a real cost, even if it never appears on a P&amp;L.</p>
+
+          <p>What automation looks like here: a new agent joins, a workflow triggers automatically covering every required step, every required document, and every required follow-up in the same order every time.</p>
+
+          <hr>
+
+          <h2>5. Reporting and Performance Visibility</h2>
+
+          <p>Most brokerage owners do not have real-time visibility into their business. Agent performance, pipeline status, and lead conversion rates require someone to manually pull data from multiple systems and compile it into a report. That is hours of work every week producing information that is already out of date by the time it is ready.</p>
+
+          <p>We audit what data exists, where it lives, and how long it takes to get it into a usable form. In most cases the data is there. It is just scattered across a CRM, a transaction management system, and a few spreadsheets.</p>
+
+          <p>What automation looks like here: a live dashboard pulling from existing systems, updated automatically, so the owner has the numbers they need without anyone spending time to produce them.</p>
+
+          <hr>
+
+          <h2>Where to Start</h2>
+
+          <p>The better approach is to start with one workflow. Pick the task that is most painful, most repetitive, and most document-heavy. For most independent brokerages that is transaction coordination or lead routing. Not because the others do not matter, but because the time savings are immediate and visible.</p>
+
+          <p>The free AI Audit maps all five areas in 60 minutes. You receive a written report within 48 hours showing exactly where your brokerage is losing time and what automation would look like in each area. No cost, no obligation, no generic advice.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLE CTA ═══ -->
+    <section class="article-cta-section">
+      <div class="container">
+        <div class="article-cta-inner reveal">
+          <h2 class="article-cta-title">Ready to See Where Your Brokerage Is Losing Time?</h2>
+          <p class="article-cta-body">Book the free AI Audit. In 60 minutes we walk your workflows, identify your highest-value automation opportunities, and deliver a written report in 48 hours. No cost. No obligation. You keep the report either way.</p>
+          <a href="/free-ai-audit" class="btn-article-cta">Book Your Free AI Audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BACK LINK ═══ -->
+    <div class="article-back">
+      <div class="container">
+        <a href="/resources" class="article-back-link">Back to Resources &rarr;</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="../services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="../services/process-documentation.html">Process Documentation</a>
+            <a href="../services/ai-implementation.html">AI Implementation</a>
+            <a href="../services/training-enablement.html">Training &amp; Enablement</a>
+            <a href="../services/ai-strategy.html">AI Strategy</a>
+            <a href="../services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="../industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="../industries/insurance.html">Insurance Agencies</a>
+            <a href="../industries/professional-services.html">Professional Services &amp; Law Firms</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="../resources.html">Resources</a>
+            <a href="../about.html">About Us</a>
+            <a href="../ai-audit.html">What Is the AI Audit?</a>
+            <a href="../free-ai-audit.html">Book a Free Audit</a>
+            <a href="../privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-contact">
+            <a href="tel:+17866183396" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(786) 618-3396</a>
+            <a href="mailto:info@executionpointconsulting.com" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>info@executionpointconsulting.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) { bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; bars[1].style.opacity = '0'; bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; }); }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
