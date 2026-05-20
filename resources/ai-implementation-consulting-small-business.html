@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Implementation for Small Businesses: What Actually Happens, Step by Step | Execution Point Consulting</title>
+  <meta name="description" content="Most small businesses know they need AI but have no idea what implementation actually involves. Here is exactly what the process looks like from the first conversation to a live system." />
+  <!-- Canonical -->
+  <link rel="canonical" href="https://executionpointconsulting.com/resources/ai-implementation-consulting-small-business" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Execution Point Consulting" />
+  <meta property="og:title" content="AI Implementation for Small Businesses: What Actually Happens, Step by Step" />
+  <meta property="og:description" content="A practical guide to what AI implementation actually looks like for a small business. Six steps, a real timeline, no generic advice." />
+  <meta property="og:url" content="https://executionpointconsulting.com/resources/ai-implementation-consulting-small-business" />
+  <meta property="og:image" content="https://executionpointconsulting.com/og-image.png" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AI Implementation for Small Businesses: What Actually Happens, Step by Step" />
+  <meta name="twitter:description" content="A practical guide to what AI implementation actually looks like for a small business. Six steps, a real timeline, no generic advice." />
+  <meta name="twitter:image" content="https://executionpointconsulting.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@300;400;500&display=swap"></noscript>
+  <link rel="stylesheet" href="../shared.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "AI Implementation for Small Businesses: What Actually Happens, Step by Step",
+  "description": "Most small businesses know they need AI but have no idea what implementation actually involves. Here is exactly what the process looks like from the first conversation to a live system.",
+  "author": {
+    "@type": "Person",
+    "name": "Veronica Grunberg Kogan"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Execution Point Consulting",
+    "url": "https://executionpointconsulting.com"
+  },
+  "url": "https://executionpointconsulting.com/resources/ai-implementation-consulting-small-business",
+  "datePublished": "2026-05-19",
+  "dateModified": "2026-05-19"
+}
+</script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://executionpointconsulting.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resources",
+      "item": "https://executionpointconsulting.com/resources"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "AI Implementation for Small Businesses",
+      "item": "https://executionpointconsulting.com/resources/ai-implementation-consulting-small-business"
+    }
+  ]
+}
+</script>
+
+  <style>
+    /* ── ARTICLE PAGE ── */
+
+    /* Article header section */
+    .article-header {
+      background: var(--navy);
+      padding: 120px 0 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 80% 50%, rgba(42,173,162,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-header .container {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .article-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.40);
+      margin-bottom: 24px;
+    }
+    .article-breadcrumb a {
+      color: rgba(255,255,255,0.40);
+      transition: color 0.15s;
+    }
+    .article-breadcrumb a:hover { color: var(--teal-lt); }
+    .article-breadcrumb-sep { color: rgba(255,255,255,0.20); }
+
+    .article-header-tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal-lt);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .article-header-title {
+      font-family: var(--serif);
+      font-size: clamp(32px, 3.8vw, 54px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 22px;
+    }
+
+    .article-header-sub {
+      font-family: var(--serif);
+      font-size: clamp(17px, 1.6vw, 22px);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.70);
+      line-height: 1.50;
+      margin-bottom: 28px;
+    }
+
+    .article-byline {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.40);
+      letter-spacing: 0.02em;
+    }
+    .article-byline span {
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body-section {
+      background: var(--off-white);
+      padding: 80px 0 96px;
+    }
+
+    .article-body-section .container {
+      max-width: 720px;
+    }
+
+    .article-body p {
+      font-family: var(--sans);
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--text-body);
+      line-height: 1.82;
+      margin-bottom: 28px;
+    }
+
+    .article-body hr {
+      border: none;
+      border-top: 1px solid rgba(11,31,58,0.10);
+      margin: 48px 0;
+    }
+
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.2vw, 34px);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.18;
+      margin-top: 56px;
+      margin-bottom: 22px;
+      letter-spacing: -0.01em;
+    }
+    .article-body h2:first-child { margin-top: 0; }
+
+    /* ── ARTICLE CTA ── */
+    .article-cta-section {
+      background: var(--navy);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 80% at 85% 50%, rgba(42,173,162,0.09) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    .article-cta-title {
+      font-family: var(--serif);
+      font-size: clamp(28px, 2.8vw, 42px);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+
+    .article-cta-body {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .btn-article-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 18px 40px;
+      background: var(--gold);
+      color: var(--navy);
+      transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+    }
+    .btn-article-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(201,168,76,0.45);
+    }
+
+    /* Back to resources link */
+    .article-back {
+      background: var(--off-white);
+      padding: 32px 0 48px;
+      border-top: 1px solid rgba(11,31,58,0.08);
+    }
+    .article-back .container {
+      max-width: 720px;
+    }
+    .article-back-link {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--teal);
+      letter-spacing: 0.04em;
+      transition: gap 0.2s var(--ease-out), color 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .article-back-link:hover {
+      color: var(--navy);
+      gap: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .article-header { padding: 100px 0 60px; }
+      .article-header-title { font-size: clamp(26px, 6vw, 38px); }
+      .article-header-sub { font-size: clamp(15px, 3.5vw, 18px); }
+      .article-body-section { padding: 56px 0 64px; }
+      .article-body p { font-size: 16px; }
+      .article-body h2 { font-size: clamp(22px, 4.5vw, 28px); margin-top: 40px; }
+      .article-cta-section { padding: 60px 0; }
+      .article-cta-title { font-size: clamp(24px, 5.5vw, 34px); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="nav-logo-mark"><span>EP</span></div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">Execution Point</span>
+          <span class="nav-logo-sub">AI &amp; Automation Consulting</span>
+        </div>
+      </a>
+      <ul class="nav-links">
+        <li class="nav-item-dropdown">
+          <a href="../what-we-do.html">What We Do</a>
+          <div class="mega-menu two-col">
+            <div>
+              <div class="mega-col-title">Services</div>
+              <a href="../services/ai-readiness-suite.html" class="mega-link">AI Readiness Suite</a>
+              <a href="../services/ai-strategy.html" class="mega-link">AI Strategy Consulting</a>
+              <a href="../services/ai-implementation.html" class="mega-link">AI &amp; Automation Implementation</a>
+              <a href="../services/process-documentation.html" class="mega-link">Process Documentation &amp; SOPs</a>
+            </div>
+            <div>
+              <div class="mega-col-title">&nbsp;</div>
+              <a href="../services/training-enablement.html" class="mega-link">AI Training &amp; Enablement</a>
+              <a href="../services/operations-retainer.html" class="mega-link">AI Operations Retainer</a>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item-dropdown">
+          <a href="../industries.html">Industries</a>
+          <div class="mega-menu two-col" style="min-width:360px;">
+            <div>
+              <div class="mega-col-title">Industries We Serve</div>
+              <a href="../industries/real-estate.html" class="mega-link">Real Estate Brokerages</a>
+              <a href="../industries/insurance.html" class="mega-link">Insurance Agencies</a>
+              <a href="../industries/professional-services.html" class="mega-link">Professional Services &amp; Law Firms</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../resources.html">Resources</a></li>
+        <li><a href="../about.html">About Us</a></li>
+      </ul>
+      <a href="../free-ai-audit.html" class="nav-cta">Free AI Audit</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile overlay -->
+  <div class="nav-mobile-overlay" id="mobileNav">
+    <a href="../what-we-do.html">What We Do</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Services</span>
+      <a href="../services/ai-readiness-suite.html" class="mobile-mega-link">AI Readiness Suite</a>
+      <a href="../services/ai-strategy.html" class="mobile-mega-link">AI Strategy Consulting</a>
+      <a href="../services/ai-implementation.html" class="mobile-mega-link">AI &amp; Automation Implementation</a>
+      <a href="../services/process-documentation.html" class="mobile-mega-link">Process Documentation &amp; SOPs</a>
+      <a href="../services/training-enablement.html" class="mobile-mega-link">AI Training &amp; Enablement</a>
+      <a href="../services/operations-retainer.html" class="mobile-mega-link">AI Operations Retainer</a>
+    </div>
+    <a href="../industries.html">Industries</a>
+    <div class="mobile-mega-group">
+      <span class="mobile-mega-label">Industries We Serve</span>
+      <a href="../industries/real-estate.html" class="mobile-mega-link">Real Estate Brokerages</a>
+      <a href="../industries/insurance.html" class="mobile-mega-link">Insurance Agencies</a>
+      <a href="../industries/professional-services.html" class="mobile-mega-link">Professional Services &amp; Law Firms</a>
+    </div>
+    <a href="../resources.html">Resources</a>
+    <a href="../about.html">About Us</a>
+    <a href="../free-ai-audit.html" style="color:var(--teal-lt);">Free AI Audit &rarr;</a>
+  </div>
+
+  <main>
+
+    <!-- ═══ ARTICLE HEADER ═══ -->
+    <section class="article-header">
+      <div class="container">
+        <div class="article-breadcrumb">
+          <a href="/resources">Resources</a>
+          <span class="article-breadcrumb-sep">/</span>
+          <span>AI Implementation</span>
+        </div>
+        <span class="article-header-tag">AI Implementation</span>
+        <h1 class="article-header-title">AI Implementation for Small Businesses: What Actually Happens, Step by Step</h1>
+        <p class="article-header-sub">Most small businesses know they need AI but have no idea what implementation actually involves. Here is exactly what the process looks like from the first conversation to a live system.</p>
+        <p class="article-byline">By <span>Veronica Grunberg Kogan</span> &middot; Execution Point Consulting &middot; May 2026</p>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLE BODY ═══ -->
+    <section class="article-body-section">
+      <div class="container">
+        <div class="article-body">
+
+          <p>Most small businesses in 2026 are using some form of AI. But there is a significant gap between using a tool and having a system that actually works for your business. According to Goldman Sachs, only 14% of small businesses are fully integrating AI into core operations. The most common barriers are lack of technical expertise, data privacy concerns, and not knowing which tools to choose.</p>
+
+          <p>That gap exists because most businesses try to implement AI on their own, picking tools before understanding the problem. This article walks through what a structured AI implementation actually looks like when done correctly, step by step, from the first conversation to a live system.</p>
+
+          <hr>
+
+          <h2>Step 1. The Diagnostic Comes First</h2>
+
+          <p>Before recommending any tool, a qualified implementation partner maps your current workflows. That means understanding how work actually moves through your business today, not how you think it moves or how it is supposed to move.</p>
+
+          <p>The diagnostic identifies where time is being lost, where errors are introduced, where handoffs break down, and which processes are repeatable enough to automate. It also surfaces compliance considerations specific to your industry before any technology decisions are made.</p>
+
+          <p>This step is non-negotiable. Skipping it and going straight to tool selection is the single most common reason AI implementations fail in small businesses. A tool without a mapped workflow is just another subscription you are not using.</p>
+
+          <p>At Execution Point Consulting, every engagement starts with a free AI Audit, a 60-minute working session that produces a written diagnostic report within 48 hours. No cost, no obligation.</p>
+
+          <img src="../images/articles/image5.png"
+               alt="AI implementation process diagram showing six steps from diagnostic to ongoing optimization for small businesses. Execution Point Consulting."
+               style="width:100%;max-width:720px;margin:40px 0;border-radius:8px;"
+               loading="lazy">
+
+          <hr>
+
+          <h2>Step 2. Prioritizing What to Automate</h2>
+
+          <p>Not everything gets automated at once. After the diagnostic, the next step is identifying which workflows deliver the most value when automated and which ones can wait.</p>
+
+          <p>The prioritization framework is simple. High-value automation candidates are workflows that are high volume, highly repetitive, rule-based, and currently creating bottlenecks or errors. Low-priority candidates are workflows that require significant human judgment, happen infrequently, or involve too many variables to systematize.</p>
+
+          <p>For most small businesses the first automation is something immediately visible and measurable. A client intake process, a follow-up sequence, a reporting dashboard. Starting with a visible win builds confidence across the team and proves the model before expanding.</p>
+
+          <hr>
+
+          <h2>Step 3. Building Against Your Actual Systems</h2>
+
+          <p>AI implementation for small businesses is not about replacing your existing software. It is about connecting what you already have and filling the gaps where manual work is happening.</p>
+
+          <p>Most small businesses already use a CRM, an email platform, a calendar tool, and some form of document management. A platform-agnostic implementation partner builds automations that work across those existing systems rather than asking you to replace everything with a new platform.</p>
+
+          <p>This matters because vendor lock-in is a real risk. An implementation partner who is tied to a specific software vendor has an incentive to recommend that vendor regardless of whether it is the right fit for your business. A platform-agnostic partner recommends what is right for your operation, not what pays a referral fee.</p>
+
+          <hr>
+
+          <h2>Step 4. Compliance Review Before Anything Goes Live</h2>
+
+          <p>For businesses operating in industries with data privacy, licensing, or documentation requirements, compliance review is built into the implementation process rather than added at the end.</p>
+
+          <p>This means every automated workflow is reviewed for potential compliance exposure before it touches a client, a document, or a sensitive process. It means data handling is documented and explainable. It means the humans who need to stay in the loop stay in the loop.</p>
+
+          <p>This is not just risk management. It is also a business continuity requirement. An automated workflow that creates a compliance gap is worse than no automation at all.</p>
+
+          <hr>
+
+          <h2>Step 5. Documentation and Training</h2>
+
+          <p>When implementation is complete, your team receives full documentation of every system built. This includes how each automation works, what triggers it, what it does, and how to modify or disable it if needed.</p>
+
+          <p>Training is role-specific. The person who manages the CRM gets different training than the person who handles client intake. Nobody is handed a manual and expected to figure it out.</p>
+
+          <p>Documentation also protects your business if the implementation partner relationship ends. You own the systems. You understand how they work. You are not dependent on a vendor to keep them running.</p>
+
+          <hr>
+
+          <h2>Step 6. Ongoing Optimization</h2>
+
+          <p>A live automation is the beginning of the process, not the end. As your business changes, as volumes increase, as new tools become available, your automations need to evolve.</p>
+
+          <p>Ongoing optimization means reviewing what is working, identifying new automation opportunities as they emerge, and making adjustments before problems develop rather than after. For most small businesses this looks like a monthly or quarterly check-in with a structured review of system performance and a prioritized list of next improvements.</p>
+
+          <p>The compounding effect is real. Each additional automation builds on the infrastructure already in place, which means each subsequent implementation moves faster and costs less than the one before it.</p>
+
+          <hr>
+
+          <h2>What This Looks Like in Practice</h2>
+
+          <p>The typical timeline for a small business AI implementation looks like this:</p>
+
+          <p>Weeks 1 to 2: Diagnostic and prioritization</p>
+
+          <p>Weeks 2 to 4: Process documentation and workflow mapping</p>
+
+          <p>Weeks 4 to 8: Build and compliance review</p>
+
+          <p>Weeks 8 to 10: Testing and team training</p>
+
+          <p>Weeks 10 to 12: Go live and first optimization review</p>
+
+          <p>Most businesses see their first automation live within 4 to 6 weeks of kickoff. Full implementation across multiple workflows typically runs 8 to 12 weeks depending on the number of systems being integrated.</p>
+
+          <hr>
+
+          <h2>Where to Start</h2>
+
+          <p>The diagnostic is always the starting point. Not a software demo. Not a proposal. A structured review of your actual workflows that tells you exactly where automation delivers value and what it would cost to get there.</p>
+
+          <p>The free AI Audit at Execution Point Consulting covers this in 60 minutes. You receive a written report within 48 hours. No cost, no obligation, no generic advice. You keep the report regardless of whether you move forward.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ ARTICLE CTA ═══ -->
+    <section class="article-cta-section">
+      <div class="container">
+        <div class="article-cta-inner reveal">
+          <h2 class="article-cta-title">Ready to See What AI Implementation Looks Like for Your Business?</h2>
+          <p class="article-cta-body">Book the free AI Audit. In 60 minutes we walk your workflows, identify your highest-value automation opportunities, and deliver a written report in 48 hours. No cost. No obligation. You keep the report either way.</p>
+          <a href="/free-ai-audit" class="btn-article-cta">Book Your Free AI Audit</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BACK LINK ═══ -->
+    <div class="article-back">
+      <div class="container">
+        <a href="/resources" class="article-back-link">Back to Resources &rarr;</a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-name">Execution Point Consulting</div>
+          <span class="footer-tagline">Intelligent Systems. Real Results. Responsible Implementation.</span>
+          <p class="footer-desc">AI and automation consulting for small and mid-sized businesses across the United States. Compliance-first. Platform-agnostic. Built to last.</p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Services</div>
+          <div class="footer-links">
+            <a href="../services/ai-readiness-suite.html">AI Readiness Suite</a>
+            <a href="../services/process-documentation.html">Process Documentation</a>
+            <a href="../services/ai-implementation.html">AI Implementation</a>
+            <a href="../services/training-enablement.html">Training &amp; Enablement</a>
+            <a href="../services/ai-strategy.html">AI Strategy</a>
+            <a href="../services/operations-retainer.html">Operations Retainer</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Industries</div>
+          <div class="footer-links">
+            <a href="../industries/real-estate.html">Real Estate Brokerages</a>
+            <a href="../industries/insurance.html">Insurance Agencies</a>
+            <a href="../industries/professional-services.html">Professional Services &amp; Law Firms</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Company</div>
+          <div class="footer-links">
+            <a href="../resources.html">Resources</a>
+            <a href="../about.html">About Us</a>
+            <a href="../ai-audit.html">What Is the AI Audit?</a>
+            <a href="../free-ai-audit.html">Book a Free Audit</a>
+            <a href="../privacy.html">Privacy Policy</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Get In Touch</div>
+          <div class="footer-contact">
+            <a href="tel:+17866183396" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(786) 618-3396</a>
+            <a href="mailto:info@executionpointconsulting.com" class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2DD4BF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:middle;margin-right:6px;flex-shrink:0"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>info@executionpointconsulting.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Execution Point Consulting LLC · executionpointconsulting.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 60); }, { passive: true });
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    let menuOpen = false;
+    hamburger.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileNav.classList.toggle('open', menuOpen);
+      document.body.style.overflow = menuOpen ? 'hidden' : '';
+      const bars = hamburger.querySelectorAll('span');
+      if (menuOpen) { bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)'; bars[1].style.opacity = '0'; bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)'; }
+      else { bars.forEach(b => { b.style.transform = ''; b.style.opacity = ''; }); }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
