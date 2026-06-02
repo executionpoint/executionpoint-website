@@ -61,12 +61,7 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
-  <url>
-    <loc>https://executionpointconsulting.com/services/staff-augmentation</loc>
-    <priority>0.7</priority>
-    <changefreq>monthly</changefreq>
-  </url>
-  <url>
+<url>
     <loc>https://executionpointconsulting.com/services/operations-retainer</loc>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
