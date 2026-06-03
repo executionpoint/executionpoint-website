@@ -1,17 +1,38 @@
 # Netlify _redirects for executionpointconsulting.com
 # Canonical domain: executionpointconsulting.com (non-www)
-# Goal: one URL per page, everything else 301s to the clean version.
+# Your live pages are already clean URLs. These rules 301 the old .html
+# duplicates to the clean version, and force www -> root.
 
 # 1. Force www -> root (non-www canonical)
 https://www.executionpointconsulting.com/*   https://executionpointconsulting.com/:splat   301!
 
-# 2. Strip .html so /services.html -> /services (one canonical clean URL)
-/index.html        /            301!
-/*.html            /:splat       301!
+# 2. Homepage
+/index.html        /        301!
+
+# 3. Top-level pages: old .html -> clean URL
+/about.html              /about              301!
+/what-we-do.html         /what-we-do         301!
+/industries.html         /industries         301!
+/resources.html          /resources          301!
+/free-ai-audit.html      /free-ai-audit      301!
+/ai-audit.html           /ai-audit           301!
+/privacy.html            /privacy            301!
+
+# 4. Service pages
+/services/ai-readiness-suite.html      /services/ai-readiness-suite      301!
+/services/ai-strategy.html             /services/ai-strategy             301!
+/services/ai-implementation.html       /services/ai-implementation       301!
+/services/process-documentation.html   /services/process-documentation   301!
+/services/training-enablement.html     /services/training-enablement     301!
+/services/operations-retainer.html     /services/operations-retainer     301!
+
+# 5. Industry pages
+/industries/real-estate.html            /industries/real-estate            301!
+/industries/insurance.html              /industries/insurance              301!
+/industries/professional-services.html  /industries/professional-services  301!
 
 # Notes:
-# - The 301! (with the bang) forces the redirect even if a matching file exists. Keep it.
-# - Netlify already forces HTTPS once your domain has a cert, so no http->https rule needed here.
-# - Order matters: www rule runs before the .html rules.
-# - The /*.html rule passes the path without the extension via :splat.
-#   Example: /about.html -> /about
+# - One line per page is required. Netlify wildcards only match at the END
+#   of a path, so a single "/*.html" rule does NOT work.
+# - A rule for a .html file that doesn't exist is harmless; it just never fires.
+# - If you add new pages later, add a matching line here.
